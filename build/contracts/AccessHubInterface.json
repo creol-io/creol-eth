@@ -1,0 +1,582 @@
+{
+  "fileName": "AccessHubInterface.sol",
+  "contractName": "AccessHubInterface",
+  "source": "pragma solidity ^0.5.17;\r\n\r\nimport \"./AccessHub.sol\";\r\n\r\ninterface AccessHubInterface {\r\n    enum ContractTypes { ControlState, SiteState, RoomState, LEDState }\r\n    \r\n    function checkAndSendFunction( bytes calldata packedMethodCall, address destination, ContractTypes destinationType) external;\r\n    function addAccess(address userAddress, ContractTypes destinationType) external;\r\n    function removeAccess(address userAddress, ContractTypes destinationType) external;\r\n    function checkHasAccess(address _accountToCheck, ContractTypes destinationType) external view returns (bool hasAccess);\r\n}\r\n",
+  "sourcePath": "contracts/AccessHub/AccessHubInterface.sol",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "userAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "enum AccessHubInterface.ContractTypes",
+          "name": "destinationType",
+          "type": "uint8"
+        }
+      ],
+      "name": "addAccess",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "packedMethodCall",
+          "type": "bytes"
+        },
+        {
+          "internalType": "address",
+          "name": "destination",
+          "type": "address"
+        },
+        {
+          "internalType": "enum AccessHubInterface.ContractTypes",
+          "name": "destinationType",
+          "type": "uint8"
+        }
+      ],
+      "name": "checkAndSendFunction",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_accountToCheck",
+          "type": "address"
+        },
+        {
+          "internalType": "enum AccessHubInterface.ContractTypes",
+          "name": "destinationType",
+          "type": "uint8"
+        }
+      ],
+      "name": "checkHasAccess",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "hasAccess",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "userAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "enum AccessHubInterface.ContractTypes",
+          "name": "destinationType",
+          "type": "uint8"
+        }
+      ],
+      "name": "removeAccess",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "ast": {
+    "absolutePath": "contracts/AccessHub/AccessHubInterface.sol",
+    "exportedSymbols": {
+      "AccessHubInterface": [
+        3182
+      ]
+    },
+    "id": 3183,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3143,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:19"
+      },
+      {
+        "absolutePath": "contracts/AccessHub/AccessHub.sol",
+        "file": "./AccessHub.sol",
+        "id": 3144,
+        "nodeType": "ImportDirective",
+        "scope": 3183,
+        "sourceUnit": 3142,
+        "src": "28:25:19",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 3182,
+        "linearizedBaseContracts": [
+          3182
+        ],
+        "name": "AccessHubInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "AccessHubInterface.ContractTypes",
+            "id": 3149,
+            "members": [
+              {
+                "id": 3145,
+                "name": "ControlState",
+                "nodeType": "EnumValue",
+                "src": "114:12:19"
+              },
+              {
+                "id": 3146,
+                "name": "SiteState",
+                "nodeType": "EnumValue",
+                "src": "128:9:19"
+              },
+              {
+                "id": 3147,
+                "name": "RoomState",
+                "nodeType": "EnumValue",
+                "src": "139:9:19"
+              },
+              {
+                "id": 3148,
+                "name": "LEDState",
+                "nodeType": "EnumValue",
+                "src": "150:8:19"
+              }
+            ],
+            "name": "ContractTypes",
+            "nodeType": "EnumDefinition",
+            "src": "93:67:19"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 3158,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "checkAndSendFunction",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3156,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3151,
+                  "name": "packedMethodCall",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3158,
+                  "src": "203:31:19",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 3150,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "203:5:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3153,
+                  "name": "destination",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3158,
+                  "src": "236:19:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3152,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "236:7:19",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3155,
+                  "name": "destinationType",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3158,
+                  "src": "257:29:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_ContractTypes_$3149",
+                    "typeString": "enum AccessHubInterface.ContractTypes"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3154,
+                    "name": "ContractTypes",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3149,
+                    "src": "257:13:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_ContractTypes_$3149",
+                      "typeString": "enum AccessHubInterface.ContractTypes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "201:86:19"
+            },
+            "returnParameters": {
+              "id": 3157,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "296:0:19"
+            },
+            "scope": 3182,
+            "src": "172:125:19",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 3165,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addAccess",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3163,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3160,
+                  "name": "userAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3165,
+                  "src": "322:19:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3159,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "322:7:19",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3162,
+                  "name": "destinationType",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3165,
+                  "src": "343:29:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_ContractTypes_$3149",
+                    "typeString": "enum AccessHubInterface.ContractTypes"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3161,
+                    "name": "ContractTypes",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3149,
+                    "src": "343:13:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_ContractTypes_$3149",
+                      "typeString": "enum AccessHubInterface.ContractTypes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "321:52:19"
+            },
+            "returnParameters": {
+              "id": 3164,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "382:0:19"
+            },
+            "scope": 3182,
+            "src": "303:80:19",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 3172,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "removeAccess",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3170,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3167,
+                  "name": "userAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3172,
+                  "src": "411:19:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3166,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "411:7:19",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3169,
+                  "name": "destinationType",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3172,
+                  "src": "432:29:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_ContractTypes_$3149",
+                    "typeString": "enum AccessHubInterface.ContractTypes"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3168,
+                    "name": "ContractTypes",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3149,
+                    "src": "432:13:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_ContractTypes_$3149",
+                      "typeString": "enum AccessHubInterface.ContractTypes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "410:52:19"
+            },
+            "returnParameters": {
+              "id": 3171,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "471:0:19"
+            },
+            "scope": 3182,
+            "src": "389:83:19",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 3181,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "checkHasAccess",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3177,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3174,
+                  "name": "_accountToCheck",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3181,
+                  "src": "502:23:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3173,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "502:7:19",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3176,
+                  "name": "destinationType",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3181,
+                  "src": "527:29:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_ContractTypes_$3149",
+                    "typeString": "enum AccessHubInterface.ContractTypes"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3175,
+                    "name": "ContractTypes",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3149,
+                    "src": "527:13:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_ContractTypes_$3149",
+                      "typeString": "enum AccessHubInterface.ContractTypes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "501:56:19"
+            },
+            "returnParameters": {
+              "id": 3180,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3179,
+                  "name": "hasAccess",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3181,
+                  "src": "581:14:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 3178,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "581:4:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "580:16:19"
+            },
+            "scope": 3182,
+            "src": "478:119:19",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 3183,
+        "src": "57:543:19"
+      }
+    ],
+    "src": "0:602:19"
+  },
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang",
+    "optimizer": {
+      "enabled": true,
+      "runs": 1000
+    },
+    "evmVersion": "petersburg"
+  }
+}

@@ -1,0 +1,870 @@
+{
+  "fileName": "SiteStateInterface.sol",
+  "contractName": "SiteStateInterface",
+  "source": "pragma solidity ^0.5.17;\r\n\r\ninterface SiteStateInterface {\r\n    function initialize(address _owner, address _ControlAddress, address _allowedGSNAddress, string calldata _SiteName, address _RoomStateFactory, address _LEDFactory) external;\r\n    function IsRegistered(address _RoomID) external view returns (bool SiteRegistry);\r\n    function IsActive(address _RoomID) external view returns (bool SiteActive);\r\n    function CreateRoom (address _accessHub , address _GSNAddress, string calldata _roomName) external;\r\n    function AddRoom(address _RoomID, string calldata _RoomName) external  ;\r\n    function RemoveRoom(address _RoomID) external ;\r\n    function getRoomCount() external view returns(uint roomCount);\r\n\r\n}\r\n",
+  "sourcePath": "contracts/SiteState/SiteStateInterface.sol",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_RoomID",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "_RoomName",
+          "type": "string"
+        }
+      ],
+      "name": "AddRoom",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_accessHub",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_GSNAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "_roomName",
+          "type": "string"
+        }
+      ],
+      "name": "CreateRoom",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_RoomID",
+          "type": "address"
+        }
+      ],
+      "name": "IsActive",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "SiteActive",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_RoomID",
+          "type": "address"
+        }
+      ],
+      "name": "IsRegistered",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "SiteRegistry",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_RoomID",
+          "type": "address"
+        }
+      ],
+      "name": "RemoveRoom",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getRoomCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "roomCount",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_ControlAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_allowedGSNAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "_SiteName",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "_RoomStateFactory",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_LEDFactory",
+          "type": "address"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "ast": {
+    "absolutePath": "contracts/SiteState/SiteStateInterface.sol",
+    "exportedSymbols": {
+      "SiteStateInterface": [
+        14728
+      ]
+    },
+    "id": 14729,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14672,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:40"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 14728,
+        "linearizedBaseContracts": [
+          14728
+        ],
+        "name": "SiteStateInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14687,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "initialize",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14685,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14674,
+                  "name": "_owner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14687,
+                  "src": "84:14:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14673,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "84:7:40",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14676,
+                  "name": "_ControlAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14687,
+                  "src": "100:23:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14675,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "100:7:40",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14678,
+                  "name": "_allowedGSNAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14687,
+                  "src": "125:26:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14677,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "125:7:40",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14680,
+                  "name": "_SiteName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14687,
+                  "src": "153:25:40",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 14679,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "153:6:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14682,
+                  "name": "_RoomStateFactory",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14687,
+                  "src": "180:25:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14681,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "180:7:40",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14684,
+                  "name": "_LEDFactory",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14687,
+                  "src": "207:19:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14683,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "207:7:40",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "83:144:40"
+            },
+            "returnParameters": {
+              "id": 14686,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "236:0:40"
+            },
+            "scope": 14728,
+            "src": "64:173:40",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14694,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "IsRegistered",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14690,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14689,
+                  "name": "_RoomID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14694,
+                  "src": "265:15:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14688,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "265:7:40",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "264:17:40"
+            },
+            "returnParameters": {
+              "id": 14693,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14692,
+                  "name": "SiteRegistry",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14694,
+                  "src": "305:17:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 14691,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "305:4:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "304:19:40"
+            },
+            "scope": 14728,
+            "src": "243:81:40",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14701,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "IsActive",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14697,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14696,
+                  "name": "_RoomID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14701,
+                  "src": "348:15:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14695,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "348:7:40",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "347:17:40"
+            },
+            "returnParameters": {
+              "id": 14700,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14699,
+                  "name": "SiteActive",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14701,
+                  "src": "388:15:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 14698,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "388:4:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "387:17:40"
+            },
+            "scope": 14728,
+            "src": "330:75:40",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14710,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "CreateRoom",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14708,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14703,
+                  "name": "_accessHub",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14710,
+                  "src": "432:18:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14702,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "432:7:40",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14705,
+                  "name": "_GSNAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14710,
+                  "src": "453:19:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14704,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "453:7:40",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14707,
+                  "name": "_roomName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14710,
+                  "src": "474:25:40",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 14706,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "474:6:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "431:69:40"
+            },
+            "returnParameters": {
+              "id": 14709,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "509:0:40"
+            },
+            "scope": 14728,
+            "src": "411:99:40",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14717,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "AddRoom",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14715,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14712,
+                  "name": "_RoomID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14717,
+                  "src": "533:15:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14711,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "533:7:40",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14714,
+                  "name": "_RoomName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14717,
+                  "src": "550:25:40",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 14713,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "550:6:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "532:44:40"
+            },
+            "returnParameters": {
+              "id": 14716,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "587:0:40"
+            },
+            "scope": 14728,
+            "src": "516:72:40",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14722,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "RemoveRoom",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14720,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14719,
+                  "name": "_RoomID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14722,
+                  "src": "614:15:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14718,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "614:7:40",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "613:17:40"
+            },
+            "returnParameters": {
+              "id": 14721,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "640:0:40"
+            },
+            "scope": 14728,
+            "src": "594:47:40",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14727,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getRoomCount",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14723,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "668:2:40"
+            },
+            "returnParameters": {
+              "id": 14726,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14725,
+                  "name": "roomCount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14727,
+                  "src": "693:14:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14724,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "693:4:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "692:16:40"
+            },
+            "scope": 14728,
+            "src": "647:62:40",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 14729,
+        "src": "28:686:40"
+      }
+    ],
+    "src": "0:716:40"
+  },
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang",
+    "optimizer": {
+      "enabled": true,
+      "runs": 1000
+    },
+    "evmVersion": "petersburg"
+  }
+}

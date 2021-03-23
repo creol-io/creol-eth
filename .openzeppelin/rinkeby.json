@@ -1,0 +1,690 @@
+{
+  "contracts": {
+    "GridMix": {
+      "address": "0x1c88db14F0e0cfb5738c3D94B1b173e0F4f3F06D",
+      "constructorCode": "6080604052613680806100136000396000f3fe",
+      "bodyBytecodeHash": "3939a8723d59253bc6a1f2a8ad011741a4d7b08616998d31e43c75081a30c61f",
+      "localBytecodeHash": "c8ea1b12da0f11c01072737212d95c3bd2723fa8ce7ebd602be448964433b006",
+      "deployedBytecodeHash": "c8ea1b12da0f11c01072737212d95c3bd2723fa8ce7ebd602be448964433b006",
+      "types": {
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_string": {
+          "id": "t_string",
+          "kind": "elementary",
+          "label": "string"
+        },
+        "t_bytes32": {
+          "id": "t_bytes32",
+          "kind": "elementary",
+          "label": "bytes32"
+        },
+        "t_mapping<t_bytes32>": {
+          "id": "t_mapping<t_bytes32>",
+          "valueType": "t_bytes32",
+          "label": "mapping(key => bytes32)",
+          "kind": "mapping"
+        },
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_mapping<t_bool>": {
+          "id": "t_mapping<t_bool>",
+          "valueType": "t_bool",
+          "label": "mapping(key => bool)",
+          "kind": "mapping"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        }
+      },
+      "storage": [
+        {
+          "contract": "usingProvable",
+          "path": "contracts/Provable/provableAPI.sol",
+          "label": "provable",
+          "astId": 2651,
+          "type": "t_address",
+          "src": "11284:18:12"
+        },
+        {
+          "contract": "usingProvable",
+          "path": "contracts/Provable/provableAPI.sol",
+          "label": "OAR",
+          "astId": 2653,
+          "type": "t_address",
+          "src": "11309:23:12"
+        },
+        {
+          "contract": "usingProvable",
+          "path": "contracts/Provable/provableAPI.sol",
+          "label": "provable_network_name",
+          "astId": 2698,
+          "type": "t_string",
+          "src": "11741:28:12"
+        },
+        {
+          "contract": "usingProvable",
+          "path": "contracts/Provable/provableAPI.sol",
+          "label": "provable_randomDS_args",
+          "astId": 2717,
+          "type": "t_mapping<t_bytes32>",
+          "src": "11993:50:12"
+        },
+        {
+          "contract": "usingProvable",
+          "path": "contracts/Provable/provableAPI.sol",
+          "label": "provable_randomDS_sessionKeysHashVerified",
+          "astId": 2721,
+          "type": "t_mapping<t_bool>",
+          "src": "12050:66:12"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 344,
+          "type": "t_bool",
+          "src": "757:24:3"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 346,
+          "type": "t_bool",
+          "src": "876:25:3"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 408,
+          "type": "t_array:50<t_uint256>",
+          "src": "1982:29:3"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "_owner",
+          "astId": 226,
+          "type": "t_address",
+          "src": "526:22:2"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "______gap",
+          "astId": 339,
+          "type": "t_array:50<t_uint256>",
+          "src": "2471:29:2"
+        },
+        {
+          "contract": "GridMix",
+          "path": "contracts/GridMix/GridMix.sol",
+          "label": "GridIntensity",
+          "astId": 434,
+          "type": "t_string",
+          "src": "1910:27:4"
+        },
+        {
+          "contract": "GridMix",
+          "path": "contracts/GridMix/GridMix.sol",
+          "label": "genericVCUOffsetInterface",
+          "astId": 444,
+          "type": "t_address",
+          "src": "2042:51:4"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "LEDFactory": {
+      "address": "0x9663Ee25b41329f18DAc7545d9616Afc3A9c33dC",
+      "constructorCode": "6080604052612821806100136000396000f3fe",
+      "bodyBytecodeHash": "4e50170553121b53016bf2393ca61c29439bf810575559c75d850f66c5732fea",
+      "localBytecodeHash": "672121fada81132bef3d92a9779779f90e59106a92c47ff11356f287d31a050f",
+      "deployedBytecodeHash": "e7db2513dbdbeefeb43e4dafabf2061bdd4d850de4f77d88034af2b3ea5d519d",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_array:dyn<t_address>": {
+          "id": "t_array:dyn<t_address>",
+          "valueType": "t_address",
+          "length": "dyn",
+          "kind": "array",
+          "label": "address[]"
+        },
+        "t_mapping<t_bool>": {
+          "id": "t_mapping<t_bool>",
+          "valueType": "t_bool",
+          "label": "mapping(key => bool)",
+          "kind": "mapping"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 344,
+          "type": "t_bool",
+          "src": "757:24:3"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 346,
+          "type": "t_bool",
+          "src": "876:25:3"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 408,
+          "type": "t_array:50<t_uint256>",
+          "src": "1982:29:3"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "_owner",
+          "astId": 226,
+          "type": "t_address",
+          "src": "526:22:2"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "______gap",
+          "astId": 339,
+          "type": "t_array:50<t_uint256>",
+          "src": "2471:29:2"
+        },
+        {
+          "contract": "LEDFactory",
+          "path": "contracts/LEDState/LEDFactory.sol",
+          "label": "LEDs",
+          "astId": 636,
+          "type": "t_array:dyn<t_address>",
+          "src": "2312:21:6"
+        },
+        {
+          "contract": "LEDFactory",
+          "path": "contracts/LEDState/LEDFactory.sol",
+          "label": "LEDExists",
+          "astId": 640,
+          "type": "t_mapping<t_bool>",
+          "src": "2340:34:6"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "RoomState": {
+      "address": "0x76e71f81455E50EAFD7cc41864E757Cdfeb00d7d",
+      "constructorCode": "608060405234801561001057600080fd5b50612cf8806100206000396000f3fe",
+      "bodyBytecodeHash": "ea8c4408897d1f68230f923afe67197669f5c7f0dc353c8c2ac704cf8dc2f110",
+      "localBytecodeHash": "12b1780da15b6e4cf9691b950540bcb0a645e3c4045550881a94f52a508e3f05",
+      "deployedBytecodeHash": "12b1780da15b6e4cf9691b950540bcb0a645e3c4045550881a94f52a508e3f05",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_struct<RoomState.Group>": {
+          "id": "t_struct<RoomState.Group>",
+          "kind": "struct",
+          "label": "RoomState.Group",
+          "members": [
+            {
+              "label": "count",
+              "astId": 8303,
+              "type": "t_uint256",
+              "src": "1579:13:13"
+            },
+            {
+              "label": "LEDs",
+              "astId": 8306,
+              "type": "t_array:dyn<t_address>",
+              "src": "1603:14:13"
+            }
+          ]
+        },
+        "t_array:dyn<t_address>": {
+          "id": "t_array:dyn<t_address>",
+          "valueType": "t_address",
+          "length": "dyn",
+          "kind": "array",
+          "label": "address[]"
+        },
+        "t_mapping<t_struct<RoomState.Group>>": {
+          "id": "t_mapping<t_struct<RoomState.Group>>",
+          "valueType": "t_struct<RoomState.Group>",
+          "label": "mapping(key => RoomState.Group)",
+          "kind": "mapping"
+        },
+        "t_struct<RoomState.CreezyPi>": {
+          "id": "t_struct<RoomState.CreezyPi>",
+          "kind": "struct",
+          "label": "RoomState.CreezyPi",
+          "members": [
+            {
+              "label": "coapAddress",
+              "astId": 8321,
+              "type": "t_string",
+              "src": "2194:18:13"
+            },
+            {
+              "label": "creezyID",
+              "astId": 8323,
+              "type": "t_string",
+              "src": "2223:15:13"
+            },
+            {
+              "label": "numLEDs",
+              "astId": 8325,
+              "type": "t_uint256",
+              "src": "2249:15:13"
+            },
+            {
+              "label": "numUniverses",
+              "astId": 8327,
+              "type": "t_uint256",
+              "src": "2275:20:13"
+            }
+          ]
+        },
+        "t_string": {
+          "id": "t_string",
+          "kind": "elementary",
+          "label": "string"
+        },
+        "t_mapping<t_struct<RoomState.CreezyPi>>": {
+          "id": "t_mapping<t_struct<RoomState.CreezyPi>>",
+          "valueType": "t_struct<RoomState.CreezyPi>",
+          "label": "mapping(key => RoomState.CreezyPi)",
+          "kind": "mapping"
+        },
+        "t_mapping<t_bool>": {
+          "id": "t_mapping<t_bool>",
+          "valueType": "t_bool",
+          "label": "mapping(key => bool)",
+          "kind": "mapping"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 344,
+          "type": "t_bool",
+          "src": "757:24:3"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 346,
+          "type": "t_bool",
+          "src": "876:25:3"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 408,
+          "type": "t_array:50<t_uint256>",
+          "src": "1982:29:3"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "_owner",
+          "astId": 226,
+          "type": "t_address",
+          "src": "526:22:2"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "______gap",
+          "astId": 339,
+          "type": "t_array:50<t_uint256>",
+          "src": "2471:29:2"
+        },
+        {
+          "contract": "RoomState",
+          "path": "contracts/RoomState/RoomState.sol",
+          "label": "creezyUniverse",
+          "astId": 8311,
+          "type": "t_mapping<t_struct<RoomState.Group>>",
+          "src": "1779:39:13"
+        },
+        {
+          "contract": "RoomState",
+          "path": "contracts/RoomState/RoomState.sol",
+          "label": "groupDesignator",
+          "astId": 8315,
+          "type": "t_mapping<t_struct<RoomState.Group>>",
+          "src": "1941:40:13"
+        },
+        {
+          "contract": "RoomState",
+          "path": "contracts/RoomState/RoomState.sol",
+          "label": "genericLEDFactoryInterface",
+          "astId": 8317,
+          "type": "t_address",
+          "src": "2000:54:13"
+        },
+        {
+          "contract": "RoomState",
+          "path": "contracts/RoomState/RoomState.sol",
+          "label": "genericLEDStateInterface",
+          "astId": 8319,
+          "type": "t_address",
+          "src": "2067:50:13"
+        },
+        {
+          "contract": "RoomState",
+          "path": "contracts/RoomState/RoomState.sol",
+          "label": "numCreezies",
+          "astId": 8330,
+          "type": "t_uint256",
+          "src": "2354:26:13"
+        },
+        {
+          "contract": "RoomState",
+          "path": "contracts/RoomState/RoomState.sol",
+          "label": "creezies",
+          "astId": 8334,
+          "type": "t_mapping<t_struct<RoomState.CreezyPi>>",
+          "src": "2450:44:13"
+        },
+        {
+          "contract": "RoomState",
+          "path": "contracts/RoomState/RoomState.sol",
+          "label": "creezyExists",
+          "astId": 8338,
+          "type": "t_mapping<t_bool>",
+          "src": "2507:36:13"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "VCUOffset": {
+      "address": "0x2Ad99F5aC414e81F4255a722AB211985865B96Cd",
+      "constructorCode": "608060405234801561001057600080fd5b50611ea6806100206000396000f3fe",
+      "bodyBytecodeHash": "6e22c6144bc26739dcfb8590782261d807f69e35a7b7ae8d1fe2b1a73d4002c2",
+      "localBytecodeHash": "40b61892efa23d18417860be95d7d7b86e832f9f114f409e98ae6cdd15995b29",
+      "deployedBytecodeHash": "40b61892efa23d18417860be95d7d7b86e832f9f114f409e98ae6cdd15995b29",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 344,
+          "type": "t_bool",
+          "src": "757:24:3"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 346,
+          "type": "t_bool",
+          "src": "876:25:3"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 408,
+          "type": "t_array:50<t_uint256>",
+          "src": "1982:29:3"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "_owner",
+          "astId": 226,
+          "type": "t_address",
+          "src": "526:22:2"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "______gap",
+          "astId": 339,
+          "type": "t_array:50<t_uint256>",
+          "src": "2471:29:2"
+        },
+        {
+          "contract": "VCUOffset",
+          "path": "contracts/VCUOffset/VCUOffset.sol",
+          "label": "genericGridMixInterface",
+          "astId": 9092,
+          "type": "t_address",
+          "src": "1868:48:15"
+        },
+        {
+          "contract": "VCUOffset",
+          "path": "contracts/VCUOffset/VCUOffset.sol",
+          "label": "genericRoomStateInterface",
+          "astId": 9094,
+          "type": "t_address",
+          "src": "1923:52:15"
+        },
+        {
+          "contract": "VCUOffset",
+          "path": "contracts/VCUOffset/VCUOffset.sol",
+          "label": "genericCarbonVCUInterface",
+          "astId": 9096,
+          "type": "t_address",
+          "src": "1982:52:15"
+        },
+        {
+          "contract": "VCUOffset",
+          "path": "contracts/VCUOffset/VCUOffset.sol",
+          "label": "currentWattHoursToOffset",
+          "astId": 9098,
+          "type": "t_uint256",
+          "src": "2047:40:15"
+        },
+        {
+          "contract": "VCUOffset",
+          "path": "contracts/VCUOffset/VCUOffset.sol",
+          "label": "currentAvailableOffsets",
+          "astId": 9100,
+          "type": "t_uint256",
+          "src": "2094:39:15"
+        },
+        {
+          "contract": "VCUOffset",
+          "path": "contracts/VCUOffset/VCUOffset.sol",
+          "label": "tokensToBurn",
+          "astId": 9102,
+          "type": "t_uint256",
+          "src": "2140:27:15"
+        },
+        {
+          "contract": "VCUOffset",
+          "path": "contracts/VCUOffset/VCUOffset.sol",
+          "label": "CreolOffsetFactor",
+          "astId": 9104,
+          "type": "t_uint256",
+          "src": "2180:32:15"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    }
+  },
+  "solidityLibs": {
+    "LEDLibrary": {
+      "address": "0xB45E149f53186be6482768c310c42bc076f88E50",
+      "constructorCode": "610f28610026600b82828239805160001a60731461001957fe5b30600052607381538281f3fe",
+      "bodyBytecodeHash": "000b076d7758878b619fdc864277cd9d25a6ef4d4ea591dc20c6b8a07655ae02",
+      "localBytecodeHash": "08e40af3a05f7c2ef1afdf4743ab6c6303536a1d902a2bcc2a8cc6f51a33ec53",
+      "deployedBytecodeHash": "08e40af3a05f7c2ef1afdf4743ab6c6303536a1d902a2bcc2a8cc6f51a33ec53"
+    }
+  },
+  "proxies": {
+    "creol-eth/LEDFactory": [
+      {
+        "address": "0xaDf9EDFFAEAC190cA4A156A105E24dA45A88Fcdc",
+        "version": "0.0.1",
+        "implementation": "0x9663Ee25b41329f18DAc7545d9616Afc3A9c33dC",
+        "admin": "0x925b49D3c7866Ee01EF6bB8104763a89CBC4414D",
+        "kind": "Upgradeable"
+      }
+    ],
+    "creol-eth/RoomState": [
+      {
+        "address": "0x31761AA0A1012ca0dcB3008d2afc40be5B083608",
+        "version": "0.0.1",
+        "implementation": "0x76e71f81455E50EAFD7cc41864E757Cdfeb00d7d",
+        "admin": "0x925b49D3c7866Ee01EF6bB8104763a89CBC4414D",
+        "kind": "Upgradeable"
+      }
+    ],
+    "creol-eth/GridMix": [
+      {
+        "address": "0x09995BFa6FA3D3BED46bD499E01a4EE45403E5D8",
+        "version": "0.0.1",
+        "implementation": "0x1c88db14F0e0cfb5738c3D94B1b173e0F4f3F06D",
+        "admin": "0x925b49D3c7866Ee01EF6bB8104763a89CBC4414D",
+        "kind": "Upgradeable"
+      }
+    ],
+    "creol-eth/VCUOffset": [
+      {
+        "address": "0x4D726556cA0Be15C30e28E606d3D1aE03Ecb48A8",
+        "version": "0.0.1",
+        "implementation": "0x2Ad99F5aC414e81F4255a722AB211985865B96Cd",
+        "admin": "0x925b49D3c7866Ee01EF6bB8104763a89CBC4414D",
+        "kind": "Upgradeable"
+      }
+    ]
+  },
+  "manifestVersion": "2.2",
+  "version": "0.0.1",
+  "app": {
+    "address": "0x12d4950B1537CFD28FCba54028D279A534730072"
+  },
+  "package": {
+    "address": "0xd36Fb2a02E914C12ce4315552b3C58fc9d99DF25"
+  },
+  "provider": {
+    "address": "0xdC53Cd07210eDcf507Ee06C6fd19b4Ef2E0954f4"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts-ethereum-package": {
+      "package": "0xa44bb80b290dE8a465d17B14269dF53CF0B9Bf4f",
+      "version": "2.5.0"
+    }
+  },
+  "proxyAdmin": {
+    "address": "0x925b49D3c7866Ee01EF6bB8104763a89CBC4414D"
+  }
+}

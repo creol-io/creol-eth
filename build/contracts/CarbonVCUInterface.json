@@ -1,0 +1,165 @@
+{
+  "fileName": "CarbonVCUInterface.sol",
+  "contractName": "CarbonVCUInterface",
+  "source": "\r\npragma solidity ^0.5.0;\r\n/**\r\n * \r\n * \r\n * \r\n *   @title CarbonVCUInterface v0.0.1\r\n ________  ________  _______   ________  ___          \r\n|\\   ____\\|\\   __  \\|\\  ___ \\ |\\   __  \\|\\  \\         \r\n\\ \\  \\___|\\ \\  \\|\\  \\ \\   __/|\\ \\  \\|\\  \\ \\  \\        \r\n \\ \\  \\    \\ \\   _  _\\ \\  \\_|/_\\ \\  \\\\\\  \\ \\  \\       \r\n  \\ \\  \\____\\ \\  \\\\  \\\\ \\  \\_|\\ \\ \\  \\\\\\  \\ \\  \\____  \r\n   \\ \\_______\\ \\__\\\\ _\\\\ \\_______\\ \\_______\\ \\_______\\\r\n    \\|_______|\\|__|\\|__|\\|_______|\\|_______|\\|_______|\r\n                                             \r\n \r\n \r\n * \r\n * \r\n\r\n\r\n\r\n   _____           _             __      _______ _    _ _____       _             __               \r\n  / ____|         | |            \\ \\    / / ____| |  | |_   _|     | |           / _|              \r\n | |     __ _ _ __| |__   ___  _ _\\ \\  / / |    | |  | | | |  _ __ | |_ ___ _ __| |_ __ _  ___ ___ \r\n | |    / _` | '__| '_ \\ / _ \\| '_ \\ \\/ /| |    | |  | | | | | '_ \\| __/ _ \\ '__|  _/ _` |/ __/ _ \\\r\n | |___| (_| | |  | |_) | (_) | | | \\  / | |____| |__| |_| |_| | | | ||  __/ |  | || (_| | (_|  __/\r\n  \\_____\\__,_|_|  |_.__/ \\___/|_| |_|\\/   \\_____|\\____/|_____|_| |_|\\__\\___|_|  |_| \\__,_|\\___\\___|\r\n                                                                                                   \r\n                                                                                                   \r\n\r\n                                    \r\n* @author Joshua Bijak \r\n* Date:       February 18,2020 \r\n* @notice CarbonVCU Pulling Contract Interface\r\n* @dev CarbonVCU interface to get VCU Information \r\n \r\n* \r\n* \r\n*           \r\n* \r\n*/\r\n\r\ninterface CarbonVCUInterface {\r\n    function gettokenIDtoSubtokenAddress(uint256 _VCUID) external view returns(address _subtokenAddress);\r\n}",
+  "sourcePath": "creol-carbon-eth/contracts/CarbonVCU/CarbonVCUInterface.sol",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_VCUID",
+          "type": "uint256"
+        }
+      ],
+      "name": "gettokenIDtoSubtokenAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "_subtokenAddress",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "ast": {
+    "absolutePath": "creol-carbon-eth/contracts/CarbonVCU/CarbonVCUInterface.sol",
+    "exportedSymbols": {
+      "CarbonVCUInterface": [
+        15175
+      ]
+    },
+    "id": 15176,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 15167,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "2:23:43"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "\r\n\r\n\r\n  @title CarbonVCUInterface v0.0.1\n________  ________  _______   ________  ___          \n|\\   ____\\|\\   __  \\|\\  ___ \\ |\\   __  \\|\\  \\         \n\\ \\  \\___|\\ \\  \\|\\  \\ \\   __/|\\ \\  \\|\\  \\ \\  \\        \n\\ \\  \\    \\ \\   _  _\\ \\  \\_|/_\\ \\  \\\\\\  \\ \\  \\       \n\\ \\  \\____\\ \\  \\\\  \\\\ \\  \\_|\\ \\ \\  \\\\\\  \\ \\  \\____  \n\\ \\_______\\ \\__\\\\ _\\\\ \\_______\\ \\_______\\ \\_______\\\n\\|_______|\\|__|\\|__|\\|_______|\\|_______|\\|_______|\n\r\n\r\n_____           _             __      _______ _    _ _____       _             __               \n/ ____|         | |            \\ \\    / / ____| |  | |_   _|     | |           / _|              \n| |     __ _ _ __| |__   ___  _ _\\ \\  / / |    | |  | | | |  _ __ | |_ ___ _ __| |_ __ _  ___ ___ \n| |    / _` | '__| '_ \\ / _ \\| '_ \\ \\/ /| |    | |  | | | | | '_ \\| __/ _ \\ '__|  _/ _` |/ __/ _ \\\n| |___| (_| | |  | |_) | (_) | | | \\  / | |____| |__| |_| |_| | | | ||  __/ |  | || (_| | (_|  __/\n\\_____\\__,_|_|  |_.__/ \\___/|_| |_|\\/   \\_____|\\____/|_____|_| |_|\\__\\___|_|  |_| \\__,_|\\___\\___|\n@author Joshua Bijak \nDate:       February 18,2020 \n@notice CarbonVCU Pulling Contract Interface\n@dev CarbonVCU interface to get VCU Information \n\r\n\r\n          \n\r",
+        "fullyImplemented": false,
+        "id": 15175,
+        "linearizedBaseContracts": [
+          15175
+        ],
+        "name": "CarbonVCUInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 15174,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "gettokenIDtoSubtokenAddress",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15170,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15169,
+                  "name": "_VCUID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15174,
+                  "src": "1661:14:43",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15168,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1661:7:43",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1660:16:43"
+            },
+            "returnParameters": {
+              "id": 15173,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15172,
+                  "name": "_subtokenAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15174,
+                  "src": "1699:24:43",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15171,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1699:7:43",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1698:26:43"
+            },
+            "scope": 15175,
+            "src": "1624:101:43",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 15176,
+        "src": "1588:140:43"
+      }
+    ],
+    "src": "2:1726:43"
+  },
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang",
+    "optimizer": {
+      "enabled": true,
+      "runs": 1000
+    },
+    "evmVersion": "petersburg"
+  }
+}

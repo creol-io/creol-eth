@@ -1,0 +1,38 @@
+{
+  "manifestVersion": "2.2",
+  "contracts": {
+    "GridMix": "GridMix",
+    "LEDFactory": "LEDFactory",
+    "RoomState": "RoomState",
+    "VCUOffset": "VCUOffset",
+    "AccessHub": "AccessHub",
+    "SiteState": "SiteState",
+    "SiteStateFactory": "SiteStateFactory",
+    "ControlState": "ControlState",
+    "LEDState": "LEDState",
+    "LEDLibrary": "LEDLibrary",
+    "RoomStateFactory": "RoomStateFactory",
+    "AccountRegistry": "AccountRegistry"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts-ethereum-package": "^2.4.0"
+  },
+  "name": "creol-eth",
+  "version": "0.0.2",
+  "compiler": {
+    "compilerSettings": {
+      "optimizer": {
+        "enabled": true,
+        "runs": "1000"
+      }
+    },
+    "typechain": {
+      "enabled": false
+    },
+    "manager": "openzeppelin",
+    "solcVersion": "0.5.17",
+    "artifactsDir": "build/contracts",
+    "contractsDir": "contracts"
+  },
+  "telemetryOptIn": false
+}

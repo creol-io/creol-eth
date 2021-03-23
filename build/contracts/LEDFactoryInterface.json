@@ -1,0 +1,685 @@
+{
+  "fileName": "LEDFactoryInterface.sol",
+  "contractName": "LEDFactoryInterface",
+  "source": "/*\r\n  @title LEDFactoryInterface v0.0.1\r\n ________  ________  _______   ________  ___\r\n|\\   ____\\|\\   __  \\|\\  ___ \\ |\\   __  \\|\\  \\\r\n\\ \\  \\___|\\ \\  \\|\\  \\ \\   __/|\\ \\  \\|\\  \\ \\  \\\r\n \\ \\  \\    \\ \\   _  _\\ \\  \\_|/_\\ \\  \\\\\\  \\ \\  \\\r\n  \\ \\  \\____\\ \\  \\\\  \\\\ \\  \\_|\\ \\ \\  \\\\\\  \\ \\  \\____\r\n   \\ \\_______\\ \\__\\\\ _\\\\ \\_______\\ \\_______\\ \\_______\\\r\n    \\|_______|\\|__|\\|__|\\|_______|\\|_______|\\|_______|\r\n\r\n\r\n\r\n  _      ______ _____  ______         _                   _____       _             __\r\n | |    |  ____|  __ \\|  ____|       | |                 |_   _|     | |           / _|\r\n | |    | |__  | |  | | |__ __ _  ___| |_ ___  _ __ _   _  | |  _ __ | |_ ___ _ __| |_ __ _  ___ ___\r\n | |    |  __| | |  | |  __/ _` |/ __| __/ _ \\| '__| | | | | | | '_ \\| __/ _ \\ '__|  _/ _` |/ __/ _ \\\r\n | |____| |____| |__| | | | (_| | (__| || (_) | |  | |_| |_| |_| | | | ||  __/ |  | || (_| | (_|  __/\r\n |______|______|_____/|_|  \\__,_|\\___|\\__\\___/|_|   \\__, |_____|_| |_|\\__\\___|_|  |_| \\__,_|\\___\\___|\r\n                                                     __/ |\r\n                                                    |___/\r\nAuthor:      Joshua Bijak\r\nDate:        Nov 14, 2019\r\nTitle:       LEDState Contract Factory interface\r\nDescription: interface to LEDFactory\r\n\r\n\r\n*/\r\n\r\npragma solidity ^0.5.0;\r\n/**\r\n * @author Joshua Bijak\r\n * @dev LEDFactory interface\r\n * @notice LEDFactory interface\r\n */\r\ninterface LEDFactoryInterface{\r\n    function createLED(bool defaultState, address _roomContract,address _roomOwner, address _GSNAddress, uint256 _daliShortAddress, uint256 _LEDDim, uint256 _LEDWattage) external returns(address LEDstateAddress);\r\n    function createLEDStateUpgradeable(address _creolAdmin, bytes calldata _encodedData) external returns (address);\r\n    function addApprovedRoomState(address _newRoomStateAddress) external;\r\n    function removeApprovedRoomState(address _oldRoomStateAddress) external;\r\n    event LogNewLED(address LED);\r\n}\r\n",
+  "sourcePath": "contracts/LEDState/LEDFactoryInterface.sol",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "LED",
+          "type": "address"
+        }
+      ],
+      "name": "LogNewLED",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_newRoomStateAddress",
+          "type": "address"
+        }
+      ],
+      "name": "addApprovedRoomState",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "defaultState",
+          "type": "bool"
+        },
+        {
+          "internalType": "address",
+          "name": "_roomContract",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_roomOwner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_GSNAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_daliShortAddress",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_LEDDim",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_LEDWattage",
+          "type": "uint256"
+        }
+      ],
+      "name": "createLED",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "LEDstateAddress",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_creolAdmin",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_encodedData",
+          "type": "bytes"
+        }
+      ],
+      "name": "createLEDStateUpgradeable",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_oldRoomStateAddress",
+          "type": "address"
+        }
+      ],
+      "name": "removeApprovedRoomState",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "ast": {
+    "absolutePath": "contracts/LEDState/LEDFactoryInterface.sol",
+    "exportedSymbols": {
+      "LEDFactoryInterface": [
+        4801
+      ]
+    },
+    "id": 4802,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4758,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "1262:23:27"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@author Joshua Bijak\n@dev LEDFactory interface\n@notice LEDFactory interface",
+        "fullyImplemented": false,
+        "id": 4801,
+        "linearizedBaseContracts": [
+          4801
+        ],
+        "name": "LEDFactoryInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 4777,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createLED",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4773,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4760,
+                  "name": "defaultState",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4777,
+                  "src": "1440:17:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 4759,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1440:4:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4762,
+                  "name": "_roomContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4777,
+                  "src": "1459:21:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4761,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1459:7:27",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4764,
+                  "name": "_roomOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4777,
+                  "src": "1481:18:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4763,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1481:7:27",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4766,
+                  "name": "_GSNAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4777,
+                  "src": "1501:19:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4765,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1501:7:27",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4768,
+                  "name": "_daliShortAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4777,
+                  "src": "1522:25:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4767,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1522:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4770,
+                  "name": "_LEDDim",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4777,
+                  "src": "1549:15:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4769,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1549:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4772,
+                  "name": "_LEDWattage",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4777,
+                  "src": "1566:19:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4771,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1566:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1439:147:27"
+            },
+            "returnParameters": {
+              "id": 4776,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4775,
+                  "name": "LEDstateAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4777,
+                  "src": "1604:23:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4774,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1604:7:27",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1603:25:27"
+            },
+            "scope": 4801,
+            "src": "1421:208:27",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 4786,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createLEDStateUpgradeable",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4782,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4779,
+                  "name": "_creolAdmin",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4786,
+                  "src": "1670:19:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4778,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1670:7:27",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4781,
+                  "name": "_encodedData",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4786,
+                  "src": "1691:27:27",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 4780,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1691:5:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1669:50:27"
+            },
+            "returnParameters": {
+              "id": 4785,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4784,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4786,
+                  "src": "1738:7:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4783,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1738:7:27",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1737:9:27"
+            },
+            "scope": 4801,
+            "src": "1635:112:27",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 4791,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addApprovedRoomState",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4789,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4788,
+                  "name": "_newRoomStateAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4791,
+                  "src": "1783:28:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4787,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1783:7:27",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1782:30:27"
+            },
+            "returnParameters": {
+              "id": 4790,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1821:0:27"
+            },
+            "scope": 4801,
+            "src": "1753:69:27",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 4796,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "removeApprovedRoomState",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4794,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4793,
+                  "name": "_oldRoomStateAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4796,
+                  "src": "1861:28:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4792,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1861:7:27",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1860:30:27"
+            },
+            "returnParameters": {
+              "id": 4795,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1899:0:27"
+            },
+            "scope": 4801,
+            "src": "1828:72:27",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 4800,
+            "name": "LogNewLED",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4799,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4798,
+                  "indexed": false,
+                  "name": "LED",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4800,
+                  "src": "1922:11:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4797,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1922:7:27",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1921:13:27"
+            },
+            "src": "1906:29:27"
+          }
+        ],
+        "scope": 4802,
+        "src": "1385:553:27"
+      }
+    ],
+    "src": "1262:678:27"
+  },
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang",
+    "optimizer": {
+      "enabled": true,
+      "runs": 1000
+    },
+    "evmVersion": "petersburg"
+  }
+}

@@ -1,0 +1,393 @@
+{
+  "fileName": "RoomStateFactoryInterface.sol",
+  "contractName": "RoomStateFactoryInterface",
+  "source": "/*\r\n  @title RoomStateFactory v0.0.1\r\n ________  ________  _______   ________  ___\r\n|\\   ____\\|\\   __  \\|\\  ___ \\ |\\   __  \\|\\  \\\r\n\\ \\  \\___|\\ \\  \\|\\  \\ \\   __/|\\ \\  \\|\\  \\ \\  \\\r\n \\ \\  \\    \\ \\   _  _\\ \\  \\_|/_\\ \\  \\\\\\  \\ \\  \\\r\n  \\ \\  \\____\\ \\  \\\\  \\\\ \\  \\_|\\ \\ \\  \\\\\\  \\ \\  \\____\r\n   \\ \\_______\\ \\__\\\\ _\\\\ \\_______\\ \\_______\\ \\_______\\\r\n    \\|_______|\\|__|\\|__|\\|_______|\\|_______|\\|_______|\r\n\r\n\r\n\r\n\r\n\r\nAuthor:      Joshua Bijak\r\nDate:        July 23, 2020\r\nTitle:       RoomState Contract Factory interface\r\nDescription: interface to RoomStateFactory\r\n\r\n\r\n*/\r\n\r\npragma solidity ^0.5.0;\r\n/**\r\n * @author Joshua Bijak\r\n * @dev RoomStateFactory interface\r\n * @notice RoomStateFactory interface\r\n */\r\ninterface RoomStateFactoryInterface {\r\n    function createRoomStateUpgradeable(address _creolAdmin, bytes calldata _encodedData) external returns (address);\r\n    function addApprovedSiteState(address _newSiteStateAddress) external;\r\n    function removeApprovedSiteState(address _oldSiteStateAddress) external;\r\n\r\n    event LogNewRoomState(address RoomState);\r\n}\r\n",
+  "sourcePath": "contracts/RoomState/RoomStateFactoryInterface.sol",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "RoomState",
+          "type": "address"
+        }
+      ],
+      "name": "LogNewRoomState",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_newSiteStateAddress",
+          "type": "address"
+        }
+      ],
+      "name": "addApprovedSiteState",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_creolAdmin",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_encodedData",
+          "type": "bytes"
+        }
+      ],
+      "name": "createRoomStateUpgradeable",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_oldSiteStateAddress",
+          "type": "address"
+        }
+      ],
+      "name": "removeApprovedSiteState",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "ast": {
+    "absolutePath": "contracts/RoomState/RoomStateFactoryInterface.sol",
+    "exportedSymbols": {
+      "RoomStateFactoryInterface": [
+        13816
+      ]
+    },
+    "id": 13817,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 13792,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "564:23:35"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@author Joshua Bijak\n@dev RoomStateFactory interface\n@notice RoomStateFactory interface",
+        "fullyImplemented": false,
+        "id": 13816,
+        "linearizedBaseContracts": [
+          13816
+        ],
+        "name": "RoomStateFactoryInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 13801,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createRoomStateUpgradeable",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13797,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13794,
+                  "name": "_creolAdmin",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13801,
+                  "src": "778:19:35",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13793,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "778:7:35",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13796,
+                  "name": "_encodedData",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13801,
+                  "src": "799:27:35",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 13795,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "799:5:35",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "777:50:35"
+            },
+            "returnParameters": {
+              "id": 13800,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13799,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13801,
+                  "src": "846:7:35",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13798,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "846:7:35",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "845:9:35"
+            },
+            "scope": 13816,
+            "src": "742:113:35",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 13806,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addApprovedSiteState",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13804,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13803,
+                  "name": "_newSiteStateAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13806,
+                  "src": "891:28:35",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13802,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "891:7:35",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "890:30:35"
+            },
+            "returnParameters": {
+              "id": 13805,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "929:0:35"
+            },
+            "scope": 13816,
+            "src": "861:69:35",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 13811,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "removeApprovedSiteState",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13809,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13808,
+                  "name": "_oldSiteStateAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13811,
+                  "src": "969:28:35",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13807,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "969:7:35",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "968:30:35"
+            },
+            "returnParameters": {
+              "id": 13810,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1007:0:35"
+            },
+            "scope": 13816,
+            "src": "936:72:35",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 13815,
+            "name": "LogNewRoomState",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 13814,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13813,
+                  "indexed": false,
+                  "name": "RoomState",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13815,
+                  "src": "1038:17:35",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13812,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1038:7:35",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1037:19:35"
+            },
+            "src": "1016:41:35"
+          }
+        ],
+        "scope": 13817,
+        "src": "699:361:35"
+      }
+    ],
+    "src": "564:498:35"
+  },
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang",
+    "optimizer": {
+      "enabled": true,
+      "runs": 1000
+    },
+    "evmVersion": "petersburg"
+  }
+}

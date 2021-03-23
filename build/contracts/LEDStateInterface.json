@@ -1,0 +1,2644 @@
+{
+  "fileName": "LEDStateInterface.sol",
+  "contractName": "LEDStateInterface",
+  "source": "\r\npragma solidity ^0.5.0;\r\n/*\r\n  @title LEDStateInterface v0.0.1\r\n ________  ________  _______   ________  ___          \r\n|\\   ____\\|\\   __  \\|\\  ___ \\ |\\   __  \\|\\  \\         \r\n\\ \\  \\___|\\ \\  \\|\\  \\ \\   __/|\\ \\  \\|\\  \\ \\  \\        \r\n \\ \\  \\    \\ \\   _  _\\ \\  \\_|/_\\ \\  \\\\\\  \\ \\  \\       \r\n  \\ \\  \\____\\ \\  \\\\  \\\\ \\  \\_|\\ \\ \\  \\\\\\  \\ \\  \\____  \r\n   \\ \\_______\\ \\__\\\\ _\\\\ \\_______\\ \\_______\\ \\_______\\\r\n    \\|_______|\\|__|\\|__|\\|_______|\\|_______|\\|_______|\r\n                                             \r\n \r\n\r\n  _      ______ _____  ______         _                   _____       _             __               \r\n | |    |  ____|  __ \\|  ____|       | |                 |_   _|     | |           / _|              \r\n | |    | |__  | |  | | |__ __ _  ___| |_ ___  _ __ _   _  | |  _ __ | |_ ___ _ __| |_ __ _  ___ ___ \r\n | |    |  __| | |  | |  __/ _` |/ __| __/ _ \\| '__| | | | | | | '_ \\| __/ _ \\ '__|  _/ _` |/ __/ _ \\\r\n | |____| |____| |__| | | | (_| | (__| || (_) | |  | |_| |_| |_| | | | ||  __/ |  | || (_| | (_|  __/\r\n |______|______|_____/|_|  \\__,_|\\___|\\__\\___/|_|   \\__, |_____|_| |_|\\__\\___|_|  |_| \\__,_|\\___\\___|\r\n                                                     __/ |                                           \r\n                                                    |___/                                            \r\nAuthor:      Joshua Bijak\r\nDate:        Nov 14, 2019\r\nTitle:       LEDState Interface\r\nDescription: interface to LEDState\r\n\r\n \r\n*/\r\n/**\r\n * @author Joshua Bijak\r\n * @dev LEDState interface\r\n * @notice LEDState interface\r\n */\r\n\r\ninterface LEDStateInterface {\r\n    /**\r\n     * \r\n          ______               _       \r\n         |  ____|             | |      \r\n         | |____   _____ _ __ | |_ ___ \r\n         |  __\\ \\ / / _ \\ '_ \\| __/ __|\r\n         | |___\\ V /  __/ | | | |_\\__ \\\r\n         |______\\_/ \\___|_| |_|\\__|___/\r\n                                       \r\n     * \r\n     * \r\n     */\r\n\r\n    event daliShortAddressUpdated(uint256 daliShortAddress);\r\n    event dateStarted(uint256 startDate);\r\n    event stateUpdated(bool updatedState);\r\n    event roomChanged(address roomContract);\r\n    event dimUpdated(uint256 LEDDim);\r\n    event wattageUpdated(uint256 LEDWattage);\r\n    event lastOffsetUpdated(uint256 lastOffsetTime);\r\n    /**\r\n      *   ______                _   _                 \r\n         |  ____|              | | (_)                \r\n         | |__ _   _ _ __   ___| |_ _  ___  _ __  ___ \r\n         |  __| | | | '_ \\ / __| __| |/ _ \\| '_ \\/ __|\r\n         | |  | |_| | | | | (__| |_| | (_) | | | \\__ \\\r\n         |_|   \\__,_|_| |_|\\___|\\__|_|\\___/|_| |_|___/\r\n     */\r\n    function initialize (bool defaultState, address _roomContract,address _roomOwner,address _GSNAddress, uint256 _daliShortAddress, uint256 _LEDDim, uint256 _LEDWattage) external; \r\n    function onDim(bool newState, uint256 _LEDDim) external;\r\n    function updateState(bool newState) external;\r\n    function updateDim(uint256 _LEDDim) external;\r\n    function updateWattage(uint256 _LEDWattage) external;\r\n    function updatedaliShortAddr(uint256 newdaliShortAddr) external;\r\n    function updateRoomContract(address newRoomAddr) external;\r\n    function updateRuntimeClocks(bool newState) external;\r\n    function updateLastOffsetTime() external;\r\n    function getDailyRuntime() external view returns (uint256 dailyRun);\r\n    function getWeeklyRuntime() external view returns (uint256 weeklyRun);\r\n    function getMonthlyRuntime() external view returns (uint256 monthlyRun);\r\n    function getYearlyRuntime() external view returns (uint256 yearlyRun);\r\n    function getAllRuntime() external view returns (uint256 alltimeRun);\r\n    function getDim () external view returns (uint256 currentDim);\r\n    function getState () external view returns (bool currentState);\r\n    function getWattage () external view returns (uint256 currentWattage);\r\n    function getDALIShortAddress () external view returns (uint256 currentDALIShort);\r\n    function getRoomContract () external view returns (address currentRoom);\r\n    function getStartDate () external view returns (uint256 startDate);\r\n    function getLastOffsetDate () external view returns (uint256 lastOffsetTime);\r\n    function setGSNAllowed(address _newGSNAddress) external;\r\n    function acceptRelayedCall(\r\n        address relay,\r\n        address from,\r\n        bytes calldata encodedFunction,\r\n        uint256 transactionFee,\r\n        uint256 gasPrice,\r\n        uint256 gasLimit,\r\n        uint256 nonce,\r\n        bytes calldata approvalData,\r\n        uint256 maxPossibleCharge\r\n    ) external view returns (uint256, bytes memory);\r\n    function setRelayHubAddress() external;\r\n    function getRecipientBalance() external view returns (uint);\r\n}",
+  "sourcePath": "contracts/LEDState/LEDStateInterface.sol",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "daliShortAddress",
+          "type": "uint256"
+        }
+      ],
+      "name": "daliShortAddressUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "startDate",
+          "type": "uint256"
+        }
+      ],
+      "name": "dateStarted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "LEDDim",
+          "type": "uint256"
+        }
+      ],
+      "name": "dimUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "lastOffsetTime",
+          "type": "uint256"
+        }
+      ],
+      "name": "lastOffsetUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "roomContract",
+          "type": "address"
+        }
+      ],
+      "name": "roomChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "updatedState",
+          "type": "bool"
+        }
+      ],
+      "name": "stateUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "LEDWattage",
+          "type": "uint256"
+        }
+      ],
+      "name": "wattageUpdated",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "relay",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "encodedFunction",
+          "type": "bytes"
+        },
+        {
+          "internalType": "uint256",
+          "name": "transactionFee",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "gasPrice",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "gasLimit",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "nonce",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "approvalData",
+          "type": "bytes"
+        },
+        {
+          "internalType": "uint256",
+          "name": "maxPossibleCharge",
+          "type": "uint256"
+        }
+      ],
+      "name": "acceptRelayedCall",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getAllRuntime",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "alltimeRun",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getDALIShortAddress",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "currentDALIShort",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getDailyRuntime",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "dailyRun",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getDim",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "currentDim",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getLastOffsetDate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "lastOffsetTime",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getMonthlyRuntime",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "monthlyRun",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getRecipientBalance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getRoomContract",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "currentRoom",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getStartDate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "startDate",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getState",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "currentState",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getWattage",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "currentWattage",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getWeeklyRuntime",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "weeklyRun",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getYearlyRuntime",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "yearlyRun",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "defaultState",
+          "type": "bool"
+        },
+        {
+          "internalType": "address",
+          "name": "_roomContract",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_roomOwner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_GSNAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_daliShortAddress",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_LEDDim",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_LEDWattage",
+          "type": "uint256"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "newState",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_LEDDim",
+          "type": "uint256"
+        }
+      ],
+      "name": "onDim",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_newGSNAddress",
+          "type": "address"
+        }
+      ],
+      "name": "setGSNAllowed",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "setRelayHubAddress",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_LEDDim",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateDim",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "updateLastOffsetTime",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newRoomAddr",
+          "type": "address"
+        }
+      ],
+      "name": "updateRoomContract",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "newState",
+          "type": "bool"
+        }
+      ],
+      "name": "updateRuntimeClocks",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "newState",
+          "type": "bool"
+        }
+      ],
+      "name": "updateState",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_LEDWattage",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateWattage",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "newdaliShortAddr",
+          "type": "uint256"
+        }
+      ],
+      "name": "updatedaliShortAddr",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "ast": {
+    "absolutePath": "contracts/LEDState/LEDStateInterface.sol",
+    "exportedSymbols": {
+      "LEDStateInterface": [
+        6276
+      ]
+    },
+    "id": 6277,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6092,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "2:23:30"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@author Joshua Bijak\n@dev LEDState interface\n@notice LEDState interface",
+        "fullyImplemented": false,
+        "id": 6276,
+        "linearizedBaseContracts": [
+          6276
+        ],
+        "name": "LEDStateInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": "\r\n______               _       \n|  ____|             | |      \n| |____   _____ _ __ | |_ ___ \n|  __\\ \\ / / _ \\ '_ \\| __/ __|\n| |___\\ V /  __/ | | | |_\\__ \\\n|______\\_/ \\___|_| |_|\\__|___/\n\r\n\r",
+            "id": 6096,
+            "name": "daliShortAddressUpdated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6095,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6094,
+                  "indexed": false,
+                  "name": "daliShortAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6096,
+                  "src": "1961:24:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6093,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1961:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1960:26:30"
+            },
+            "src": "1931:56:30"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 6100,
+            "name": "dateStarted",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6099,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6098,
+                  "indexed": false,
+                  "name": "startDate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6100,
+                  "src": "2011:17:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6097,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2011:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2010:19:30"
+            },
+            "src": "1993:37:30"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 6104,
+            "name": "stateUpdated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6103,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6102,
+                  "indexed": false,
+                  "name": "updatedState",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6104,
+                  "src": "2055:17:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6101,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2055:4:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2054:19:30"
+            },
+            "src": "2036:38:30"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 6108,
+            "name": "roomChanged",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6107,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6106,
+                  "indexed": false,
+                  "name": "roomContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6108,
+                  "src": "2098:20:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6105,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2098:7:30",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2097:22:30"
+            },
+            "src": "2080:40:30"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 6112,
+            "name": "dimUpdated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6111,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6110,
+                  "indexed": false,
+                  "name": "LEDDim",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6112,
+                  "src": "2143:14:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6109,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2143:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2142:16:30"
+            },
+            "src": "2126:33:30"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 6116,
+            "name": "wattageUpdated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6115,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6114,
+                  "indexed": false,
+                  "name": "LEDWattage",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6116,
+                  "src": "2186:18:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6113,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2186:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2185:20:30"
+            },
+            "src": "2165:41:30"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 6120,
+            "name": "lastOffsetUpdated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6119,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6118,
+                  "indexed": false,
+                  "name": "lastOffsetTime",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6120,
+                  "src": "2236:22:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6117,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2236:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2235:24:30"
+            },
+            "src": "2212:48:30"
+          },
+          {
+            "body": null,
+            "documentation": "  ______                _   _                 \n|  ____|              | | (_)                \n| |__ _   _ _ __   ___| |_ _  ___  _ __  ___ \n|  __| | | | '_ \\ / __| __| |/ _ \\| '_ \\/ __|\n| |  | |_| | | | | (__| |_| | (_) | | | \\__ \\\n|_|   \\__,_|_| |_|\\___|\\__|_|\\___/|_| |_|___/",
+            "id": 6137,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "initialize",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6135,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6122,
+                  "name": "defaultState",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6137,
+                  "src": "2641:17:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6121,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2641:4:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6124,
+                  "name": "_roomContract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6137,
+                  "src": "2660:21:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6123,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2660:7:30",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6126,
+                  "name": "_roomOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6137,
+                  "src": "2682:18:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6125,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2682:7:30",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6128,
+                  "name": "_GSNAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6137,
+                  "src": "2701:19:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6127,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2701:7:30",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6130,
+                  "name": "_daliShortAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6137,
+                  "src": "2722:25:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6129,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2722:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6132,
+                  "name": "_LEDDim",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6137,
+                  "src": "2749:15:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6131,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2749:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6134,
+                  "name": "_LEDWattage",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6137,
+                  "src": "2766:19:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6133,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2766:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2640:146:30"
+            },
+            "returnParameters": {
+              "id": 6136,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2795:0:30"
+            },
+            "scope": 6276,
+            "src": "2620:176:30",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6144,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "onDim",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6142,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6139,
+                  "name": "newState",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6144,
+                  "src": "2818:13:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6138,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2818:4:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6141,
+                  "name": "_LEDDim",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6144,
+                  "src": "2833:15:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6140,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2833:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2817:32:30"
+            },
+            "returnParameters": {
+              "id": 6143,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2858:0:30"
+            },
+            "scope": 6276,
+            "src": "2803:56:30",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6149,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateState",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6147,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6146,
+                  "name": "newState",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6149,
+                  "src": "2886:13:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6145,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2886:4:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2885:15:30"
+            },
+            "returnParameters": {
+              "id": 6148,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2909:0:30"
+            },
+            "scope": 6276,
+            "src": "2865:45:30",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6154,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateDim",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6152,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6151,
+                  "name": "_LEDDim",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6154,
+                  "src": "2935:15:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6150,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2935:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2934:17:30"
+            },
+            "returnParameters": {
+              "id": 6153,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2960:0:30"
+            },
+            "scope": 6276,
+            "src": "2916:45:30",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6159,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateWattage",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6157,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6156,
+                  "name": "_LEDWattage",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6159,
+                  "src": "2990:19:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6155,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2990:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2989:21:30"
+            },
+            "returnParameters": {
+              "id": 6158,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3019:0:30"
+            },
+            "scope": 6276,
+            "src": "2967:53:30",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6164,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updatedaliShortAddr",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6162,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6161,
+                  "name": "newdaliShortAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6164,
+                  "src": "3055:24:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6160,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3055:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3054:26:30"
+            },
+            "returnParameters": {
+              "id": 6163,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3089:0:30"
+            },
+            "scope": 6276,
+            "src": "3026:64:30",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6169,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateRoomContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6167,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6166,
+                  "name": "newRoomAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6169,
+                  "src": "3124:19:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6165,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3124:7:30",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3123:21:30"
+            },
+            "returnParameters": {
+              "id": 6168,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3153:0:30"
+            },
+            "scope": 6276,
+            "src": "3096:58:30",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6174,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateRuntimeClocks",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6172,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6171,
+                  "name": "newState",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6174,
+                  "src": "3189:13:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6170,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3189:4:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3188:15:30"
+            },
+            "returnParameters": {
+              "id": 6173,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3212:0:30"
+            },
+            "scope": 6276,
+            "src": "3160:53:30",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6177,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateLastOffsetTime",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6175,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3248:2:30"
+            },
+            "returnParameters": {
+              "id": 6176,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3259:0:30"
+            },
+            "scope": 6276,
+            "src": "3219:41:30",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6182,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getDailyRuntime",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6178,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3290:2:30"
+            },
+            "returnParameters": {
+              "id": 6181,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6180,
+                  "name": "dailyRun",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6182,
+                  "src": "3316:16:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6179,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3316:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3315:18:30"
+            },
+            "scope": 6276,
+            "src": "3266:68:30",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6187,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getWeeklyRuntime",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6183,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3365:2:30"
+            },
+            "returnParameters": {
+              "id": 6186,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6185,
+                  "name": "weeklyRun",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6187,
+                  "src": "3391:17:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6184,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3391:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3390:19:30"
+            },
+            "scope": 6276,
+            "src": "3340:70:30",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6192,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getMonthlyRuntime",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6188,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3442:2:30"
+            },
+            "returnParameters": {
+              "id": 6191,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6190,
+                  "name": "monthlyRun",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6192,
+                  "src": "3468:18:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6189,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3468:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3467:20:30"
+            },
+            "scope": 6276,
+            "src": "3416:72:30",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6197,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getYearlyRuntime",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6193,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3519:2:30"
+            },
+            "returnParameters": {
+              "id": 6196,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6195,
+                  "name": "yearlyRun",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6197,
+                  "src": "3545:17:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6194,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3545:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3544:19:30"
+            },
+            "scope": 6276,
+            "src": "3494:70:30",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6202,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAllRuntime",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6198,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3592:2:30"
+            },
+            "returnParameters": {
+              "id": 6201,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6200,
+                  "name": "alltimeRun",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6202,
+                  "src": "3618:18:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6199,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3618:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3617:20:30"
+            },
+            "scope": 6276,
+            "src": "3570:68:30",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6207,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getDim",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6203,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3660:2:30"
+            },
+            "returnParameters": {
+              "id": 6206,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6205,
+                  "name": "currentDim",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6207,
+                  "src": "3686:18:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6204,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3686:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3685:20:30"
+            },
+            "scope": 6276,
+            "src": "3644:62:30",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6212,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getState",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6208,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3730:2:30"
+            },
+            "returnParameters": {
+              "id": 6211,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6210,
+                  "name": "currentState",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6212,
+                  "src": "3756:17:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6209,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3756:4:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3755:19:30"
+            },
+            "scope": 6276,
+            "src": "3712:63:30",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6217,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getWattage",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6213,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3801:2:30"
+            },
+            "returnParameters": {
+              "id": 6216,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6215,
+                  "name": "currentWattage",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6217,
+                  "src": "3827:22:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6214,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3827:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3826:24:30"
+            },
+            "scope": 6276,
+            "src": "3781:70:30",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6222,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getDALIShortAddress",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6218,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3886:2:30"
+            },
+            "returnParameters": {
+              "id": 6221,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6220,
+                  "name": "currentDALIShort",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6222,
+                  "src": "3912:24:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6219,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3912:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3911:26:30"
+            },
+            "scope": 6276,
+            "src": "3857:81:30",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6227,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getRoomContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6223,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3969:2:30"
+            },
+            "returnParameters": {
+              "id": 6226,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6225,
+                  "name": "currentRoom",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6227,
+                  "src": "3995:19:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6224,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3995:7:30",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3994:21:30"
+            },
+            "scope": 6276,
+            "src": "3944:72:30",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6232,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getStartDate",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6228,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4044:2:30"
+            },
+            "returnParameters": {
+              "id": 6231,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6230,
+                  "name": "startDate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6232,
+                  "src": "4070:17:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6229,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4070:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4069:19:30"
+            },
+            "scope": 6276,
+            "src": "4022:67:30",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6237,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getLastOffsetDate",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6233,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4122:2:30"
+            },
+            "returnParameters": {
+              "id": 6236,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6235,
+                  "name": "lastOffsetTime",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6237,
+                  "src": "4148:22:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6234,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4148:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4147:24:30"
+            },
+            "scope": 6276,
+            "src": "4095:77:30",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6242,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setGSNAllowed",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6240,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6239,
+                  "name": "_newGSNAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6242,
+                  "src": "4201:22:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6238,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4201:7:30",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4200:24:30"
+            },
+            "returnParameters": {
+              "id": 6241,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4233:0:30"
+            },
+            "scope": 6276,
+            "src": "4178:56:30",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6267,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "acceptRelayedCall",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6261,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6244,
+                  "name": "relay",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6267,
+                  "src": "4277:13:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6243,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4277:7:30",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6246,
+                  "name": "from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6267,
+                  "src": "4301:12:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6245,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4301:7:30",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6248,
+                  "name": "encodedFunction",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6267,
+                  "src": "4324:30:30",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 6247,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4324:5:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6250,
+                  "name": "transactionFee",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6267,
+                  "src": "4365:22:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6249,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4365:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6252,
+                  "name": "gasPrice",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6267,
+                  "src": "4398:16:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6251,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4398:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6254,
+                  "name": "gasLimit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6267,
+                  "src": "4425:16:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6253,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4425:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6256,
+                  "name": "nonce",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6267,
+                  "src": "4452:13:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6255,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4452:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6258,
+                  "name": "approvalData",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6267,
+                  "src": "4476:27:30",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 6257,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4476:5:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6260,
+                  "name": "maxPossibleCharge",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6267,
+                  "src": "4514:25:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6259,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4514:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4266:280:30"
+            },
+            "returnParameters": {
+              "id": 6266,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6263,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6267,
+                  "src": "4570:7:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6262,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4570:7:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6265,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6267,
+                  "src": "4579:12:30",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 6264,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4579:5:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4569:23:30"
+            },
+            "scope": 6276,
+            "src": "4240:353:30",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6270,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setRelayHubAddress",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6268,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4626:2:30"
+            },
+            "returnParameters": {
+              "id": 6269,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4637:0:30"
+            },
+            "scope": 6276,
+            "src": "4599:39:30",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 6275,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getRecipientBalance",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6271,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4672:2:30"
+            },
+            "returnParameters": {
+              "id": 6274,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6273,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6275,
+                  "src": "4698:4:30",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6272,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4698:4:30",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4697:6:30"
+            },
+            "scope": 6276,
+            "src": "4644:60:30",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 6277,
+        "src": "1562:3145:30"
+      }
+    ],
+    "src": "2:4705:30"
+  },
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang",
+    "optimizer": {
+      "enabled": true,
+      "runs": 1000
+    },
+    "evmVersion": "petersburg"
+  }
+}

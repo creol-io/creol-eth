@@ -1,0 +1,589 @@
+{
+  "fileName": "AccountRegistryInterface.sol",
+  "contractName": "AccountRegistryInterface",
+  "source": "pragma solidity ^0.5.17;\r\n\r\nimport \"./AccountRegistry.sol\";\r\n\r\ninterface AccountRegistryInterface {\r\n    function initialize(address _creolSuper) external;\r\n    function IsRegistered(address _AccessHubID) external view returns (bool AccessHubRegistry);\r\n    function IsActive(address _AccessHubID) external view returns(bool AccessHubActivity);\r\n    function AddAccessHub(address _AccessHubID, string calldata _AccessHubName) external ;\r\n    function RemoveAccessHub(address _AccessHubID) external ;\r\n    function getAccessHubCount() external view returns (uint AccessHubCount);\r\n}\r\n",
+  "sourcePath": "contracts/AccountRegistry/AccountRegistryInterface.sol",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_AccessHubID",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "_AccessHubName",
+          "type": "string"
+        }
+      ],
+      "name": "AddAccessHub",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_AccessHubID",
+          "type": "address"
+        }
+      ],
+      "name": "IsActive",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "AccessHubActivity",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_AccessHubID",
+          "type": "address"
+        }
+      ],
+      "name": "IsRegistered",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "AccessHubRegistry",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_AccessHubID",
+          "type": "address"
+        }
+      ],
+      "name": "RemoveAccessHub",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getAccessHubCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "AccessHubCount",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_creolSuper",
+          "type": "address"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "ast": {
+    "absolutePath": "contracts/AccountRegistry/AccountRegistryInterface.sol",
+    "exportedSymbols": {
+      "AccountRegistryInterface": [
+        3565
+      ]
+    },
+    "id": 3566,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3527,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:21"
+      },
+      {
+        "absolutePath": "contracts/AccountRegistry/AccountRegistry.sol",
+        "file": "./AccountRegistry.sol",
+        "id": 3528,
+        "nodeType": "ImportDirective",
+        "scope": 3566,
+        "sourceUnit": 3526,
+        "src": "28:31:21",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 3565,
+        "linearizedBaseContracts": [
+          3565
+        ],
+        "name": "AccountRegistryInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 3533,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "initialize",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3531,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3530,
+                  "name": "_creolSuper",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3533,
+                  "src": "125:19:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3529,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "125:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "124:21:21"
+            },
+            "returnParameters": {
+              "id": 3532,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "154:0:21"
+            },
+            "scope": 3565,
+            "src": "105:50:21",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 3540,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "IsRegistered",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3536,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3535,
+                  "name": "_AccessHubID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3540,
+                  "src": "183:20:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3534,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "183:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "182:22:21"
+            },
+            "returnParameters": {
+              "id": 3539,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3538,
+                  "name": "AccessHubRegistry",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3540,
+                  "src": "228:22:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 3537,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "228:4:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "227:24:21"
+            },
+            "scope": 3565,
+            "src": "161:91:21",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 3547,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "IsActive",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3543,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3542,
+                  "name": "_AccessHubID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3547,
+                  "src": "276:20:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3541,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "276:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "275:22:21"
+            },
+            "returnParameters": {
+              "id": 3546,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3545,
+                  "name": "AccessHubActivity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3547,
+                  "src": "320:22:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 3544,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "320:4:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "319:24:21"
+            },
+            "scope": 3565,
+            "src": "258:86:21",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 3554,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "AddAccessHub",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3552,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3549,
+                  "name": "_AccessHubID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3554,
+                  "src": "372:20:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3548,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "372:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3551,
+                  "name": "_AccessHubName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3554,
+                  "src": "394:30:21",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 3550,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "394:6:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "371:54:21"
+            },
+            "returnParameters": {
+              "id": 3553,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "435:0:21"
+            },
+            "scope": 3565,
+            "src": "350:86:21",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 3559,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "RemoveAccessHub",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3557,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3556,
+                  "name": "_AccessHubID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3559,
+                  "src": "467:20:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3555,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "467:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "466:22:21"
+            },
+            "returnParameters": {
+              "id": 3558,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "498:0:21"
+            },
+            "scope": 3565,
+            "src": "442:57:21",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 3564,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAccessHubCount",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3560,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "531:2:21"
+            },
+            "returnParameters": {
+              "id": 3563,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3562,
+                  "name": "AccessHubCount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3564,
+                  "src": "557:19:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3561,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "557:4:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "556:21:21"
+            },
+            "scope": 3565,
+            "src": "505:73:21",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 3566,
+        "src": "63:518:21"
+      }
+    ],
+    "src": "0:583:21"
+  },
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang",
+    "optimizer": {
+      "enabled": true,
+      "runs": 1000
+    },
+    "evmVersion": "petersburg"
+  }
+}

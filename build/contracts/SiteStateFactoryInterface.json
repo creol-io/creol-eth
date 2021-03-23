@@ -1,0 +1,393 @@
+{
+  "fileName": "SiteStateFactoryInterface.sol",
+  "contractName": "SiteStateFactoryInterface",
+  "source": "pragma solidity ^0.5.17;\r\n\r\ninterface SiteStateFactoryInterface {\r\n    function createSiteStateUpgradeable(address _creolAdmin, bytes calldata _encodedData) external returns (address);\r\n    function addApprovedControlState(address _newControlStateAddress) external;\r\n    function removeApprovedControlState(address _oldControlStateAddress) external;\r\n    \r\n    event LogNewSiteState(address SiteState);\r\n\r\n    \r\n}",
+  "sourcePath": "contracts/SiteState/SiteStateFactoryInterface.sol",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "SiteState",
+          "type": "address"
+        }
+      ],
+      "name": "LogNewSiteState",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_newControlStateAddress",
+          "type": "address"
+        }
+      ],
+      "name": "addApprovedControlState",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_creolAdmin",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_encodedData",
+          "type": "bytes"
+        }
+      ],
+      "name": "createSiteStateUpgradeable",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_oldControlStateAddress",
+          "type": "address"
+        }
+      ],
+      "name": "removeApprovedControlState",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "ast": {
+    "absolutePath": "contracts/SiteState/SiteStateFactoryInterface.sol",
+    "exportedSymbols": {
+      "SiteStateFactoryInterface": [
+        14670
+      ]
+    },
+    "id": 14671,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14646,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:39"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 14670,
+        "linearizedBaseContracts": [
+          14670
+        ],
+        "name": "SiteStateFactoryInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14655,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createSiteStateUpgradeable",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14651,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14648,
+                  "name": "_creolAdmin",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14655,
+                  "src": "107:19:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14647,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "107:7:39",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14650,
+                  "name": "_encodedData",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14655,
+                  "src": "128:27:39",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 14649,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "128:5:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "106:50:39"
+            },
+            "returnParameters": {
+              "id": 14654,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14653,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14655,
+                  "src": "175:7:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14652,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "175:7:39",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "174:9:39"
+            },
+            "scope": 14670,
+            "src": "71:113:39",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14660,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addApprovedControlState",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14658,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14657,
+                  "name": "_newControlStateAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14660,
+                  "src": "223:31:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14656,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "223:7:39",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "222:33:39"
+            },
+            "returnParameters": {
+              "id": 14659,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "264:0:39"
+            },
+            "scope": 14670,
+            "src": "190:75:39",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14665,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "removeApprovedControlState",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14663,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14662,
+                  "name": "_oldControlStateAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14665,
+                  "src": "307:31:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14661,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "307:7:39",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "306:33:39"
+            },
+            "returnParameters": {
+              "id": 14664,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "348:0:39"
+            },
+            "scope": 14670,
+            "src": "271:78:39",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 14669,
+            "name": "LogNewSiteState",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 14668,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14667,
+                  "indexed": false,
+                  "name": "SiteState",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14669,
+                  "src": "383:17:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14666,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "383:7:39",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "382:19:39"
+            },
+            "src": "361:41:39"
+          }
+        ],
+        "scope": 14671,
+        "src": "28:385:39"
+      }
+    ],
+    "src": "0:413:39"
+  },
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang",
+    "optimizer": {
+      "enabled": true,
+      "runs": 1000
+    },
+    "evmVersion": "petersburg"
+  }
+}

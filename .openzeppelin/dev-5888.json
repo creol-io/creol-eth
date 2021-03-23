@@ -1,0 +1,2430 @@
+{
+  "contracts": {
+    "GridMix": {
+      "address": "0x67B5656d60a809915323Bf2C40A8bEF15A152e3e",
+      "constructorCode": "6080604052613147806100136000396000f3fe",
+      "bodyBytecodeHash": "f2fd15ee49e38836fae09cf941e8657381c0d713819096ff021a05ef369a16bf",
+      "localBytecodeHash": "d99e09ed6edc121e01999070ca88ded2a8aff32ae085b707de2f70cff59c1971",
+      "deployedBytecodeHash": "d99e09ed6edc121e01999070ca88ded2a8aff32ae085b707de2f70cff59c1971",
+      "types": {
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_string": {
+          "id": "t_string",
+          "kind": "elementary",
+          "label": "string"
+        },
+        "t_bytes32": {
+          "id": "t_bytes32",
+          "kind": "elementary",
+          "label": "bytes32"
+        },
+        "t_mapping<t_bytes32>": {
+          "id": "t_mapping<t_bytes32>",
+          "valueType": "t_bytes32",
+          "label": "mapping(key => bytes32)",
+          "kind": "mapping"
+        },
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_mapping<t_bool>": {
+          "id": "t_mapping<t_bool>",
+          "valueType": "t_bool",
+          "label": "mapping(key => bool)",
+          "kind": "mapping"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        }
+      },
+      "storage": [
+        {
+          "contract": "usingProvable",
+          "path": "contracts/Provable/provableAPI.sol",
+          "label": "provable",
+          "astId": 6479,
+          "type": "t_address",
+          "src": "11284:18:30"
+        },
+        {
+          "contract": "usingProvable",
+          "path": "contracts/Provable/provableAPI.sol",
+          "label": "OAR",
+          "astId": 6481,
+          "type": "t_address",
+          "src": "11309:23:30"
+        },
+        {
+          "contract": "usingProvable",
+          "path": "contracts/Provable/provableAPI.sol",
+          "label": "provable_network_name",
+          "astId": 6526,
+          "type": "t_string",
+          "src": "11741:28:30"
+        },
+        {
+          "contract": "usingProvable",
+          "path": "contracts/Provable/provableAPI.sol",
+          "label": "provable_randomDS_args",
+          "astId": 6545,
+          "type": "t_mapping<t_bytes32>",
+          "src": "11993:50:30"
+        },
+        {
+          "contract": "usingProvable",
+          "path": "contracts/Provable/provableAPI.sol",
+          "label": "provable_randomDS_sessionKeysHashVerified",
+          "astId": 6549,
+          "type": "t_mapping<t_bool>",
+          "src": "12050:66:30"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 1087,
+          "type": "t_bool",
+          "src": "757:24:7"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 1089,
+          "type": "t_bool",
+          "src": "876:25:7"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 1151,
+          "type": "t_array:50<t_uint256>",
+          "src": "1982:29:7"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "_owner",
+          "astId": 969,
+          "type": "t_address",
+          "src": "526:22:6"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "______gap",
+          "astId": 1082,
+          "type": "t_array:50<t_uint256>",
+          "src": "2471:29:6"
+        },
+        {
+          "contract": "GSNRecipient",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/GSN/GSNRecipient.sol",
+          "label": "_relayHub",
+          "astId": 67,
+          "type": "t_address",
+          "src": "1149:25:1"
+        },
+        {
+          "contract": "GridMix",
+          "path": "contracts/GridMix/GridMix.sol",
+          "label": "GridIntensity",
+          "astId": 3780,
+          "type": "t_string",
+          "src": "2012:27:22"
+        },
+        {
+          "contract": "GridMix",
+          "path": "contracts/GridMix/GridMix.sol",
+          "label": "genericVCUOffsetInterface",
+          "astId": 3790,
+          "type": "t_address",
+          "src": "2144:51:22"
+        },
+        {
+          "contract": "GridMix",
+          "path": "contracts/GridMix/GridMix.sol",
+          "label": "allowedGSNAddress",
+          "astId": 3792,
+          "type": "t_address",
+          "src": "2204:33:22"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "RoomState": {
+      "address": "0x2612Af3A521c2df9EAF28422Ca335b04AdF3ac66",
+      "constructorCode": "608060405234801561001057600080fd5b50614783806100206000396000f3fe",
+      "bodyBytecodeHash": "fb549bc7fc03ed5fe432dd07aae659351d74b65d26368717898fd51c7f6f4a06",
+      "localBytecodeHash": "6a42aab54d4c57242c39a41b50b9c22ed9a56e2e10b68ef045710fd860b91b5b",
+      "deployedBytecodeHash": "6a42aab54d4c57242c39a41b50b9c22ed9a56e2e10b68ef045710fd860b91b5b",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_array:dyn<t_address>": {
+          "id": "t_array:dyn<t_address>",
+          "valueType": "t_address",
+          "length": "dyn",
+          "kind": "array",
+          "label": "address[]"
+        },
+        "t_struct<RoomState.Group>": {
+          "id": "t_struct<RoomState.Group>",
+          "kind": "struct",
+          "label": "RoomState.Group",
+          "members": [
+            {
+              "label": "count",
+              "astId": 12144,
+              "type": "t_uint256",
+              "src": "1717:13:31"
+            },
+            {
+              "label": "LEDs",
+              "astId": 12147,
+              "type": "t_array:dyn<t_address>",
+              "src": "1741:14:31"
+            },
+            {
+              "label": "isActive",
+              "astId": 12149,
+              "type": "t_bool",
+              "src": "1766:13:31"
+            },
+            {
+              "label": "groupName",
+              "astId": 12151,
+              "type": "t_string",
+              "src": "1790:16:31"
+            }
+          ]
+        },
+        "t_string": {
+          "id": "t_string",
+          "kind": "elementary",
+          "label": "string"
+        },
+        "t_array:dyn<t_struct<RoomState.Group>>": {
+          "id": "t_array:dyn<t_struct<RoomState.Group>>",
+          "valueType": "t_struct<RoomState.Group>",
+          "length": "dyn",
+          "kind": "array",
+          "label": "RoomState.Group[]"
+        },
+        "t_struct<RoomState.CreezyPi>": {
+          "id": "t_struct<RoomState.CreezyPi>",
+          "kind": "struct",
+          "label": "RoomState.CreezyPi",
+          "members": [
+            {
+              "label": "coapAddress",
+              "astId": 12154,
+              "type": "t_string",
+              "src": "1882:18:31"
+            },
+            {
+              "label": "creezyID",
+              "astId": 12156,
+              "type": "t_string",
+              "src": "1911:15:31"
+            },
+            {
+              "label": "numLEDs",
+              "astId": 12158,
+              "type": "t_uint256",
+              "src": "1937:15:31"
+            },
+            {
+              "label": "numUniverses",
+              "astId": 12160,
+              "type": "t_uint256",
+              "src": "1963:20:31"
+            },
+            {
+              "label": "isActive",
+              "astId": 12162,
+              "type": "t_bool",
+              "src": "1994:13:31"
+            }
+          ]
+        },
+        "t_array:dyn<t_struct<RoomState.CreezyPi>>": {
+          "id": "t_array:dyn<t_struct<RoomState.CreezyPi>>",
+          "valueType": "t_struct<RoomState.CreezyPi>",
+          "length": "dyn",
+          "kind": "array",
+          "label": "RoomState.CreezyPi[]"
+        },
+        "t_mapping<t_struct<RoomState.CreezyPi>>": {
+          "id": "t_mapping<t_struct<RoomState.CreezyPi>>",
+          "valueType": "t_struct<RoomState.CreezyPi>",
+          "label": "mapping(key => RoomState.CreezyPi)",
+          "kind": "mapping"
+        },
+        "t_mapping<t_uint256>": {
+          "id": "t_mapping<t_uint256>",
+          "valueType": "t_uint256",
+          "label": "mapping(key => uint256)",
+          "kind": "mapping"
+        },
+        "t_mapping<t_struct<RoomState.Group>>": {
+          "id": "t_mapping<t_struct<RoomState.Group>>",
+          "valueType": "t_struct<RoomState.Group>",
+          "label": "mapping(key => RoomState.Group)",
+          "kind": "mapping"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 1087,
+          "type": "t_bool",
+          "src": "757:24:7"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 1089,
+          "type": "t_bool",
+          "src": "876:25:7"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 1151,
+          "type": "t_array:50<t_uint256>",
+          "src": "1982:29:7"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "_owner",
+          "astId": 969,
+          "type": "t_address",
+          "src": "526:22:6"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "______gap",
+          "astId": 1082,
+          "type": "t_array:50<t_uint256>",
+          "src": "2471:29:6"
+        },
+        {
+          "contract": "GSNRecipient",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/GSN/GSNRecipient.sol",
+          "label": "_relayHub",
+          "astId": 67,
+          "type": "t_address",
+          "src": "1149:25:1"
+        },
+        {
+          "contract": "RoomState",
+          "path": "contracts/RoomState/RoomState.sol",
+          "label": "genericLEDFactoryInterface",
+          "astId": 12134,
+          "type": "t_address",
+          "src": "1449:54:31"
+        },
+        {
+          "contract": "RoomState",
+          "path": "contracts/RoomState/RoomState.sol",
+          "label": "genericLEDStateInterface",
+          "astId": 12136,
+          "type": "t_address",
+          "src": "1512:50:31"
+        },
+        {
+          "contract": "RoomState",
+          "path": "contracts/RoomState/RoomState.sol",
+          "label": "credentials",
+          "astId": 12138,
+          "type": "t_address",
+          "src": "1571:37:31"
+        },
+        {
+          "contract": "RoomState",
+          "path": "contracts/RoomState/RoomState.sol",
+          "label": "proxyAdmin",
+          "astId": 12140,
+          "type": "t_address",
+          "src": "1617:25:31"
+        },
+        {
+          "contract": "RoomState",
+          "path": "contracts/RoomState/RoomState.sol",
+          "label": "allowedGSNAddress",
+          "astId": 12142,
+          "type": "t_address",
+          "src": "1651:33:31"
+        },
+        {
+          "contract": "RoomState",
+          "path": "contracts/RoomState/RoomState.sol",
+          "label": "roomLEDs",
+          "astId": 12166,
+          "type": "t_array:dyn<t_address>",
+          "src": "2027:25:31"
+        },
+        {
+          "contract": "RoomState",
+          "path": "contracts/RoomState/RoomState.sol",
+          "label": "roomGroups",
+          "astId": 12169,
+          "type": "t_array:dyn<t_struct<RoomState.Group>>",
+          "src": "2061:25:31"
+        },
+        {
+          "contract": "RoomState",
+          "path": "contracts/RoomState/RoomState.sol",
+          "label": "roomUniverses",
+          "astId": 12172,
+          "type": "t_array:dyn<t_struct<RoomState.Group>>",
+          "src": "2095:28:31"
+        },
+        {
+          "contract": "RoomState",
+          "path": "contracts/RoomState/RoomState.sol",
+          "label": "creezyPis",
+          "astId": 12175,
+          "type": "t_array:dyn<t_struct<RoomState.CreezyPi>>",
+          "src": "2161:27:31"
+        },
+        {
+          "contract": "RoomState",
+          "path": "contracts/RoomState/RoomState.sol",
+          "label": "creezyIndextoCreezyData",
+          "astId": 12179,
+          "type": "t_mapping<t_struct<RoomState.CreezyPi>>",
+          "src": "2312:61:31"
+        },
+        {
+          "contract": "RoomState",
+          "path": "contracts/RoomState/RoomState.sol",
+          "label": "creezyIdtoCreezyIndex",
+          "astId": 12183,
+          "type": "t_mapping<t_uint256>",
+          "src": "2382:58:31"
+        },
+        {
+          "contract": "RoomState",
+          "path": "contracts/RoomState/RoomState.sol",
+          "label": "groupIndextoGroupData",
+          "astId": 12187,
+          "type": "t_mapping<t_struct<RoomState.Group>>",
+          "src": "2449:56:31"
+        },
+        {
+          "contract": "RoomState",
+          "path": "contracts/RoomState/RoomState.sol",
+          "label": "groupNametoGroupIndex",
+          "astId": 12191,
+          "type": "t_mapping<t_uint256>",
+          "src": "2514:58:31"
+        },
+        {
+          "contract": "RoomState",
+          "path": "contracts/RoomState/RoomState.sol",
+          "label": "groupNametoParentCreezyPi",
+          "astId": 12195,
+          "type": "t_mapping<t_struct<RoomState.CreezyPi>>",
+          "src": "2581:63:31"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "VCUOffset": {
+      "address": "0xA57B8a5584442B467b4689F1144D269d096A3daF",
+      "constructorCode": "608060405234801561001057600080fd5b50611621806100206000396000f3fe",
+      "bodyBytecodeHash": "bb33759dc630c05cee82c01060d821f16b91870a64ab8088336e71ca859cab39",
+      "localBytecodeHash": "89ab506eb7a80b32a95ffcedfc82fd6f6025255b8ee3501cc8975af965e32c6b",
+      "deployedBytecodeHash": "89ab506eb7a80b32a95ffcedfc82fd6f6025255b8ee3501cc8975af965e32c6b",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 1087,
+          "type": "t_bool",
+          "src": "757:24:7"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 1089,
+          "type": "t_bool",
+          "src": "876:25:7"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 1151,
+          "type": "t_array:50<t_uint256>",
+          "src": "1982:29:7"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "_owner",
+          "astId": 969,
+          "type": "t_address",
+          "src": "526:22:6"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "______gap",
+          "astId": 1082,
+          "type": "t_array:50<t_uint256>",
+          "src": "2471:29:6"
+        },
+        {
+          "contract": "VCUOffset",
+          "path": "contracts/VCUOffset/VCUOffset.sol",
+          "label": "genericGridMixInterface",
+          "astId": 14184,
+          "type": "t_address",
+          "src": "1868:48:39"
+        },
+        {
+          "contract": "VCUOffset",
+          "path": "contracts/VCUOffset/VCUOffset.sol",
+          "label": "genericRoomStateInterface",
+          "astId": 14186,
+          "type": "t_address",
+          "src": "1923:52:39"
+        },
+        {
+          "contract": "VCUOffset",
+          "path": "contracts/VCUOffset/VCUOffset.sol",
+          "label": "genericCarbonVCUInterface",
+          "astId": 14188,
+          "type": "t_address",
+          "src": "1982:52:39"
+        },
+        {
+          "contract": "VCUOffset",
+          "path": "contracts/VCUOffset/VCUOffset.sol",
+          "label": "currentWattHoursToOffset",
+          "astId": 14190,
+          "type": "t_uint256",
+          "src": "2047:40:39"
+        },
+        {
+          "contract": "VCUOffset",
+          "path": "contracts/VCUOffset/VCUOffset.sol",
+          "label": "currentAvailableOffsets",
+          "astId": 14192,
+          "type": "t_uint256",
+          "src": "2094:39:39"
+        },
+        {
+          "contract": "VCUOffset",
+          "path": "contracts/VCUOffset/VCUOffset.sol",
+          "label": "tokensToBurn",
+          "astId": 14194,
+          "type": "t_uint256",
+          "src": "2140:27:39"
+        },
+        {
+          "contract": "VCUOffset",
+          "path": "contracts/VCUOffset/VCUOffset.sol",
+          "label": "CreolOffsetFactor",
+          "astId": 14196,
+          "type": "t_uint256",
+          "src": "2180:32:39"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "AccessHub": {
+      "address": "0x26b4AFb60d6C903165150C6F0AA14F8016bE4aec",
+      "constructorCode": "608060405234801561001057600080fd5b50611f1b806100206000396000f3fe",
+      "bodyBytecodeHash": "2e41b37bbc0b3a718d560bfe2eb8dccf3385103a0a3a3a778c14a3d17b40c053",
+      "localBytecodeHash": "9d93f29c862be28130e908390010ff85d4fbb163f3a6d01ddb271a61a7b1b13a",
+      "deployedBytecodeHash": "9d93f29c862be28130e908390010ff85d4fbb163f3a6d01ddb271a61a7b1b13a",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_struct<Roles.Role>": {
+          "id": "t_struct<Roles.Role>",
+          "kind": "struct",
+          "label": "Roles.Role",
+          "members": [
+            {
+              "label": "bearer",
+              "astId": 697,
+              "type": "t_mapping<t_bool>",
+              "src": "150:32:4"
+            }
+          ]
+        },
+        "t_mapping<t_bool>": {
+          "id": "t_mapping<t_bool>",
+          "valueType": "t_bool",
+          "label": "mapping(key => bool)",
+          "kind": "mapping"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 1087,
+          "type": "t_bool",
+          "src": "757:24:7"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 1089,
+          "type": "t_bool",
+          "src": "876:25:7"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 1151,
+          "type": "t_array:50<t_uint256>",
+          "src": "1982:29:7"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "_owner",
+          "astId": 969,
+          "type": "t_address",
+          "src": "526:22:6"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "______gap",
+          "astId": 1082,
+          "type": "t_array:50<t_uint256>",
+          "src": "2471:29:6"
+        },
+        {
+          "contract": "GSNRecipient",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/GSN/GSNRecipient.sol",
+          "label": "_relayHub",
+          "astId": 67,
+          "type": "t_address",
+          "src": "1149:25:1"
+        },
+        {
+          "contract": "AccessHub",
+          "path": "contracts/AccessHub/AccessHub.sol",
+          "label": "creolSuper",
+          "astId": 2265,
+          "type": "t_address",
+          "src": "869:25:18"
+        },
+        {
+          "contract": "AccessHub",
+          "path": "contracts/AccessHub/AccessHub.sol",
+          "label": "allowedGSNAddress",
+          "astId": 2267,
+          "type": "t_address",
+          "src": "902:32:18"
+        },
+        {
+          "contract": "AccessHub",
+          "path": "contracts/AccessHub/AccessHub.sol",
+          "label": "_buildingManagers",
+          "astId": 2269,
+          "type": "t_struct<Roles.Role>",
+          "src": "944:36:18"
+        },
+        {
+          "contract": "AccessHub",
+          "path": "contracts/AccessHub/AccessHub.sol",
+          "label": "_officeAdmin",
+          "astId": 2271,
+          "type": "t_struct<Roles.Role>",
+          "src": "990:31:18"
+        },
+        {
+          "contract": "AccessHub",
+          "path": "contracts/AccessHub/AccessHub.sol",
+          "label": "_officeUser",
+          "astId": 2273,
+          "type": "t_struct<Roles.Role>",
+          "src": "1031:30:18"
+        },
+        {
+          "contract": "AccessHub",
+          "path": "contracts/AccessHub/AccessHub.sol",
+          "label": "_deskUser",
+          "astId": 2275,
+          "type": "t_struct<Roles.Role>",
+          "src": "1071:28:18"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "SiteState": {
+      "address": "0x630589690929E9cdEFDeF0734717a9eF3Ec7Fcfe",
+      "constructorCode": "608060405234801561001057600080fd5b506121ab806100206000396000f3fe",
+      "bodyBytecodeHash": "9349c8a8ab891f798fc7bf9d21e5c0e9acc50de2fa9501ca159e3acbcd4b2f8d",
+      "localBytecodeHash": "a26c6490b4dc55be09dedbd01d3a696295360fbefc5f95f5cf6804fb67699661",
+      "deployedBytecodeHash": "a26c6490b4dc55be09dedbd01d3a696295360fbefc5f95f5cf6804fb67699661",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_string": {
+          "id": "t_string",
+          "kind": "elementary",
+          "label": "string"
+        },
+        "t_array:dyn<t_address>": {
+          "id": "t_array:dyn<t_address>",
+          "valueType": "t_address",
+          "length": "dyn",
+          "kind": "array",
+          "label": "address[]"
+        },
+        "t_struct<SiteState.Room>": {
+          "id": "t_struct<SiteState.Room>",
+          "kind": "struct",
+          "label": "SiteState.Room",
+          "members": [
+            {
+              "label": "IsRegistered",
+              "astId": 13435,
+              "type": "t_bool",
+              "src": "976:17:35"
+            },
+            {
+              "label": "IsActive",
+              "astId": 13437,
+              "type": "t_bool",
+              "src": "1004:13:35"
+            },
+            {
+              "label": "RoomName",
+              "astId": 13439,
+              "type": "t_string",
+              "src": "1028:15:35"
+            }
+          ]
+        },
+        "t_mapping<t_struct<SiteState.Room>>": {
+          "id": "t_mapping<t_struct<SiteState.Room>>",
+          "valueType": "t_struct<SiteState.Room>",
+          "label": "mapping(key => SiteState.Room)",
+          "kind": "mapping"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 1087,
+          "type": "t_bool",
+          "src": "757:24:7"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 1089,
+          "type": "t_bool",
+          "src": "876:25:7"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 1151,
+          "type": "t_array:50<t_uint256>",
+          "src": "1982:29:7"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "_owner",
+          "astId": 969,
+          "type": "t_address",
+          "src": "526:22:6"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "______gap",
+          "astId": 1082,
+          "type": "t_array:50<t_uint256>",
+          "src": "2471:29:6"
+        },
+        {
+          "contract": "GSNRecipient",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/GSN/GSNRecipient.sol",
+          "label": "_relayHub",
+          "astId": 67,
+          "type": "t_address",
+          "src": "1149:25:1"
+        },
+        {
+          "contract": "SiteState",
+          "path": "contracts/SiteState/SiteState.sol",
+          "label": "genericRoomStateInterface",
+          "astId": 13429,
+          "type": "t_address",
+          "src": "762:52:35"
+        },
+        {
+          "contract": "SiteState",
+          "path": "contracts/SiteState/SiteState.sol",
+          "label": "genericRoomStateFactoryInterface",
+          "astId": 13431,
+          "type": "t_address",
+          "src": "821:65:35"
+        },
+        {
+          "contract": "SiteState",
+          "path": "contracts/SiteState/SiteState.sol",
+          "label": "LEDFactoryInterfaceCreol",
+          "astId": 13433,
+          "type": "t_address",
+          "src": "893:51:35"
+        },
+        {
+          "contract": "SiteState",
+          "path": "contracts/SiteState/SiteState.sol",
+          "label": "ControlAddress",
+          "astId": 13442,
+          "type": "t_address",
+          "src": "1059:22:35"
+        },
+        {
+          "contract": "SiteState",
+          "path": "contracts/SiteState/SiteState.sol",
+          "label": "SiteIsRegistered",
+          "astId": 13444,
+          "type": "t_bool",
+          "src": "1090:28:35"
+        },
+        {
+          "contract": "SiteState",
+          "path": "contracts/SiteState/SiteState.sol",
+          "label": "SiteIsActive",
+          "astId": 13446,
+          "type": "t_bool",
+          "src": "1125:24:35"
+        },
+        {
+          "contract": "SiteState",
+          "path": "contracts/SiteState/SiteState.sol",
+          "label": "SiteName",
+          "astId": 13448,
+          "type": "t_string",
+          "src": "1156:22:35"
+        },
+        {
+          "contract": "SiteState",
+          "path": "contracts/SiteState/SiteState.sol",
+          "label": "RoomAddresses",
+          "astId": 13451,
+          "type": "t_array:dyn<t_address>",
+          "src": "1185:30:35"
+        },
+        {
+          "contract": "SiteState",
+          "path": "contracts/SiteState/SiteState.sol",
+          "label": "proxyAdmin",
+          "astId": 13453,
+          "type": "t_address",
+          "src": "1224:25:35"
+        },
+        {
+          "contract": "SiteState",
+          "path": "contracts/SiteState/SiteState.sol",
+          "label": "allowedGSNAddress",
+          "astId": 13455,
+          "type": "t_address",
+          "src": "1258:33:35"
+        },
+        {
+          "contract": "SiteState",
+          "path": "contracts/SiteState/SiteState.sol",
+          "label": "credentials",
+          "astId": 13457,
+          "type": "t_address",
+          "src": "1300:37:35"
+        },
+        {
+          "contract": "SiteState",
+          "path": "contracts/SiteState/SiteState.sol",
+          "label": "RoomIDtoRoomData",
+          "astId": 13461,
+          "type": "t_mapping<t_struct<SiteState.Room>>",
+          "src": "1372:49:35"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "SiteStateFactory": {
+      "address": "0x0E696947A06550DEf604e82C26fd9E493e576337",
+      "constructorCode": "6080604052610cf8806100136000396000f3fe",
+      "bodyBytecodeHash": "2283ab74cba23533a8c0df7242c632336703d0a3ce4a876140b3f4773046b1b8",
+      "localBytecodeHash": "3ca2676f5dec3662444d6285278aebf48848901ab0deb4fdc094e5e62aafed68",
+      "deployedBytecodeHash": "3ca2676f5dec3662444d6285278aebf48848901ab0deb4fdc094e5e62aafed68",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_array:dyn<t_address>": {
+          "id": "t_array:dyn<t_address>",
+          "valueType": "t_address",
+          "length": "dyn",
+          "kind": "array",
+          "label": "address[]"
+        },
+        "t_mapping<t_bool>": {
+          "id": "t_mapping<t_bool>",
+          "valueType": "t_bool",
+          "label": "mapping(key => bool)",
+          "kind": "mapping"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 1087,
+          "type": "t_bool",
+          "src": "757:24:7"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 1089,
+          "type": "t_bool",
+          "src": "876:25:7"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 1151,
+          "type": "t_array:50<t_uint256>",
+          "src": "1982:29:7"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "_owner",
+          "astId": 969,
+          "type": "t_address",
+          "src": "526:22:6"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "______gap",
+          "astId": 1082,
+          "type": "t_array:50<t_uint256>",
+          "src": "2471:29:6"
+        },
+        {
+          "contract": "SiteStateFactory",
+          "path": "contracts/SiteState/SiteStateFactory.sol",
+          "label": "SiteStates",
+          "astId": 13906,
+          "type": "t_array:dyn<t_address>",
+          "src": "410:27:36"
+        },
+        {
+          "contract": "SiteStateFactory",
+          "path": "contracts/SiteState/SiteStateFactory.sol",
+          "label": "SiteStateExists",
+          "astId": 13910,
+          "type": "t_mapping<t_bool>",
+          "src": "444:40:36"
+        },
+        {
+          "contract": "SiteStateFactory",
+          "path": "contracts/SiteState/SiteStateFactory.sol",
+          "label": "ApprovedControlStates",
+          "astId": 13914,
+          "type": "t_mapping<t_bool>",
+          "src": "491:46:36"
+        },
+        {
+          "contract": "SiteStateFactory",
+          "path": "contracts/SiteState/SiteStateFactory.sol",
+          "label": "creolApp",
+          "astId": 13916,
+          "type": "t_address",
+          "src": "544:20:36"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "ControlState": {
+      "address": "0xDb56f2e9369E0D7bD191099125a3f6C370F8ed15",
+      "constructorCode": "608060405234801561001057600080fd5b506124e8806100206000396000f3fe",
+      "bodyBytecodeHash": "53128750ff755525e079061f23ab6c931dfcf3cf0442c9706293d05157aecb13",
+      "localBytecodeHash": "4ea8b75079faf886d25bbb30aa817655074df0335e28a31475a9bff1ead1974c",
+      "deployedBytecodeHash": "4ea8b75079faf886d25bbb30aa817655074df0335e28a31475a9bff1ead1974c",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_string": {
+          "id": "t_string",
+          "kind": "elementary",
+          "label": "string"
+        },
+        "t_array:dyn<t_address>": {
+          "id": "t_array:dyn<t_address>",
+          "valueType": "t_address",
+          "length": "dyn",
+          "kind": "array",
+          "label": "address[]"
+        },
+        "t_struct<ControlState.Site>": {
+          "id": "t_struct<ControlState.Site>",
+          "kind": "struct",
+          "label": "ControlState.Site",
+          "members": [
+            {
+              "label": "IsRegistered",
+              "astId": 3210,
+              "type": "t_bool",
+              "src": "1226:17:20"
+            },
+            {
+              "label": "IsActive",
+              "astId": 3212,
+              "type": "t_bool",
+              "src": "1254:13:20"
+            },
+            {
+              "label": "SiteName",
+              "astId": 3214,
+              "type": "t_string",
+              "src": "1278:15:20"
+            }
+          ]
+        },
+        "t_mapping<t_struct<ControlState.Site>>": {
+          "id": "t_mapping<t_struct<ControlState.Site>>",
+          "valueType": "t_struct<ControlState.Site>",
+          "label": "mapping(key => ControlState.Site)",
+          "kind": "mapping"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 1087,
+          "type": "t_bool",
+          "src": "757:24:7"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 1089,
+          "type": "t_bool",
+          "src": "876:25:7"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 1151,
+          "type": "t_array:50<t_uint256>",
+          "src": "1982:29:7"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "_owner",
+          "astId": 969,
+          "type": "t_address",
+          "src": "526:22:6"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "______gap",
+          "astId": 1082,
+          "type": "t_array:50<t_uint256>",
+          "src": "2471:29:6"
+        },
+        {
+          "contract": "GSNRecipient",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/GSN/GSNRecipient.sol",
+          "label": "_relayHub",
+          "astId": 67,
+          "type": "t_address",
+          "src": "1149:25:1"
+        },
+        {
+          "contract": "ControlState",
+          "path": "contracts/ControlState/ControlState.sol",
+          "label": "genericSiteStateInterface",
+          "astId": 3200,
+          "type": "t_address",
+          "src": "888:52:20"
+        },
+        {
+          "contract": "ControlState",
+          "path": "contracts/ControlState/ControlState.sol",
+          "label": "genericSiteStateFactoryInterface",
+          "astId": 3202,
+          "type": "t_address",
+          "src": "947:65:20"
+        },
+        {
+          "contract": "ControlState",
+          "path": "contracts/ControlState/ControlState.sol",
+          "label": "RoomStateFactoryInterfaceCreol",
+          "astId": 3204,
+          "type": "t_address",
+          "src": "1021:63:20"
+        },
+        {
+          "contract": "ControlState",
+          "path": "contracts/ControlState/ControlState.sol",
+          "label": "LEDFactoryInterfaceCreol",
+          "astId": 3206,
+          "type": "t_address",
+          "src": "1093:51:20"
+        },
+        {
+          "contract": "ControlState",
+          "path": "contracts/ControlState/ControlState.sol",
+          "label": "credentials",
+          "astId": 3208,
+          "type": "t_address",
+          "src": "1153:37:20"
+        },
+        {
+          "contract": "ControlState",
+          "path": "contracts/ControlState/ControlState.sol",
+          "label": "ControlAddress",
+          "astId": 3217,
+          "type": "t_address",
+          "src": "1309:22:20"
+        },
+        {
+          "contract": "ControlState",
+          "path": "contracts/ControlState/ControlState.sol",
+          "label": "ControlIsRegistered",
+          "astId": 3219,
+          "type": "t_bool",
+          "src": "1340:31:20"
+        },
+        {
+          "contract": "ControlState",
+          "path": "contracts/ControlState/ControlState.sol",
+          "label": "ControlIsActive",
+          "astId": 3221,
+          "type": "t_bool",
+          "src": "1378:27:20"
+        },
+        {
+          "contract": "ControlState",
+          "path": "contracts/ControlState/ControlState.sol",
+          "label": "ControlName",
+          "astId": 3223,
+          "type": "t_string",
+          "src": "1412:25:20"
+        },
+        {
+          "contract": "ControlState",
+          "path": "contracts/ControlState/ControlState.sol",
+          "label": "SiteAddresses",
+          "astId": 3226,
+          "type": "t_array:dyn<t_address>",
+          "src": "1444:30:20"
+        },
+        {
+          "contract": "ControlState",
+          "path": "contracts/ControlState/ControlState.sol",
+          "label": "proxyAdmin",
+          "astId": 3228,
+          "type": "t_address",
+          "src": "1483:25:20"
+        },
+        {
+          "contract": "ControlState",
+          "path": "contracts/ControlState/ControlState.sol",
+          "label": "allowedGSNAddress",
+          "astId": 3230,
+          "type": "t_address",
+          "src": "1517:33:20"
+        },
+        {
+          "contract": "ControlState",
+          "path": "contracts/ControlState/ControlState.sol",
+          "label": "SiteIDtoSiteData",
+          "astId": 3234,
+          "type": "t_mapping<t_struct<ControlState.Site>>",
+          "src": "1583:49:20"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "LEDLibrary": {
+      "address": "0xA94B7f0465E98609391C623d0560C5720a3f2D33",
+      "constructorCode": "610ac1610026600b82828239805160001a60731461001957fe5b30600052607381538281f3fe",
+      "bodyBytecodeHash": "06d9fabec6768ae2b8d1b6225c81d96235e1e23512df46104c629c9774b614a7",
+      "localBytecodeHash": "828f64e4c51ad6507a82506088fbc1dc3358e5e28b9c54fe9b5fb21ac565c526",
+      "deployedBytecodeHash": "828f64e4c51ad6507a82506088fbc1dc3358e5e28b9c54fe9b5fb21ac565c526",
+      "types": {},
+      "storage": [],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "RoomStateFactory": {
+      "address": "0x6eD79Aa1c71FD7BdBC515EfdA3Bd4e26394435cC",
+      "constructorCode": "6080604052610d01806100136000396000f3fe",
+      "bodyBytecodeHash": "f50b9b5f916cfd2afbfa8230ba64133bb927734b0d3a5876385a9a4caacb0d36",
+      "localBytecodeHash": "a1beee3320f55b5c743b469d44ff7b3469306ce482c5e22124d8bcb51b8493ac",
+      "deployedBytecodeHash": "a1beee3320f55b5c743b469d44ff7b3469306ce482c5e22124d8bcb51b8493ac",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_array:dyn<t_address>": {
+          "id": "t_array:dyn<t_address>",
+          "valueType": "t_address",
+          "length": "dyn",
+          "kind": "array",
+          "label": "address[]"
+        },
+        "t_mapping<t_bool>": {
+          "id": "t_mapping<t_bool>",
+          "valueType": "t_bool",
+          "label": "mapping(key => bool)",
+          "kind": "mapping"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 1087,
+          "type": "t_bool",
+          "src": "757:24:7"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 1089,
+          "type": "t_bool",
+          "src": "876:25:7"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 1151,
+          "type": "t_array:50<t_uint256>",
+          "src": "1982:29:7"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "_owner",
+          "astId": 969,
+          "type": "t_address",
+          "src": "526:22:6"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "______gap",
+          "astId": 1082,
+          "type": "t_array:50<t_uint256>",
+          "src": "2471:29:6"
+        },
+        {
+          "contract": "RoomStateFactory",
+          "path": "contracts/RoomState/RoomStateFactory.sol",
+          "label": "RoomStates",
+          "astId": 13105,
+          "type": "t_array:dyn<t_address>",
+          "src": "1960:27:32"
+        },
+        {
+          "contract": "RoomStateFactory",
+          "path": "contracts/RoomState/RoomStateFactory.sol",
+          "label": "RoomStateExists",
+          "astId": 13109,
+          "type": "t_mapping<t_bool>",
+          "src": "1994:40:32"
+        },
+        {
+          "contract": "RoomStateFactory",
+          "path": "contracts/RoomState/RoomStateFactory.sol",
+          "label": "ApprovedSiteStates",
+          "astId": 13113,
+          "type": "t_mapping<t_bool>",
+          "src": "2041:43:32"
+        },
+        {
+          "contract": "RoomStateFactory",
+          "path": "contracts/RoomState/RoomStateFactory.sol",
+          "label": "creolApp",
+          "astId": 13115,
+          "type": "t_address",
+          "src": "2097:20:32"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "LEDFactory": {
+      "address": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+      "constructorCode": "6080604052613145806100136000396000f3fe",
+      "bodyBytecodeHash": "e46135308f1977ba27b2654094d3571299c6ed354c3658a0a37a8fdb97e01db7",
+      "localBytecodeHash": "8bfaa9c5d0504d4b5963b8601109814bc1f1702b755d9a8adba1af2f27a29b24",
+      "deployedBytecodeHash": "dc7de2c30bf87218a74ae981821314a50ed75f708ead086ca1a452712adec971",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_array:dyn<t_address>": {
+          "id": "t_array:dyn<t_address>",
+          "valueType": "t_address",
+          "length": "dyn",
+          "kind": "array",
+          "label": "address[]"
+        },
+        "t_mapping<t_bool>": {
+          "id": "t_mapping<t_bool>",
+          "valueType": "t_bool",
+          "label": "mapping(key => bool)",
+          "kind": "mapping"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 1087,
+          "type": "t_bool",
+          "src": "757:24:7"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 1089,
+          "type": "t_bool",
+          "src": "876:25:7"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 1151,
+          "type": "t_array:50<t_uint256>",
+          "src": "1982:29:7"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "_owner",
+          "astId": 969,
+          "type": "t_address",
+          "src": "526:22:6"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "______gap",
+          "astId": 1082,
+          "type": "t_array:50<t_uint256>",
+          "src": "2471:29:6"
+        },
+        {
+          "contract": "LEDFactory",
+          "path": "contracts/LEDState/LEDFactory.sol",
+          "label": "LEDs",
+          "astId": 4101,
+          "type": "t_array:dyn<t_address>",
+          "src": "2088:21:24"
+        },
+        {
+          "contract": "LEDFactory",
+          "path": "contracts/LEDState/LEDFactory.sol",
+          "label": "LEDExists",
+          "astId": 4105,
+          "type": "t_mapping<t_bool>",
+          "src": "2116:34:24"
+        },
+        {
+          "contract": "LEDFactory",
+          "path": "contracts/LEDState/LEDFactory.sol",
+          "label": "ApprovedRoomStates",
+          "astId": 4109,
+          "type": "t_mapping<t_bool>",
+          "src": "2157:43:24"
+        },
+        {
+          "contract": "LEDFactory",
+          "path": "contracts/LEDState/LEDFactory.sol",
+          "label": "creolApp",
+          "astId": 4111,
+          "type": "t_address",
+          "src": "2207:20:24"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "LEDState": {
+      "address": "0x21a59654176f2689d12E828B77a783072CD26680",
+      "constructorCode": "608060405234801561001057600080fd5b506121b9806100206000396000f3fe",
+      "bodyBytecodeHash": "356b81181d129975f93a4a073a23998e43f226bad77d702a48ed0b46e79e92c2",
+      "localBytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047",
+      "deployedBytecodeHash": "de6cdcf6a536c2efc3afdefa8018b1478442fc0fef370eceaa82013677204609",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_struct<LEDLibrary.LEDStorage>": {
+          "id": "t_struct<LEDLibrary.LEDStorage>",
+          "kind": "struct",
+          "label": "LEDLibrary.LEDStorage",
+          "members": [
+            {
+              "label": "currentState",
+              "astId": 4387,
+              "type": "t_bool",
+              "src": "1624:17:26"
+            },
+            {
+              "label": "daliShortAddress",
+              "astId": 4389,
+              "type": "t_uint256",
+              "src": "1658:24:26"
+            },
+            {
+              "label": "LEDDim",
+              "astId": 4391,
+              "type": "t_uint256",
+              "src": "1748:14:26"
+            },
+            {
+              "label": "LEDWattage",
+              "astId": 4393,
+              "type": "t_uint256",
+              "src": "1783:18:26"
+            },
+            {
+              "label": "roomContract",
+              "astId": 4395,
+              "type": "t_address",
+              "src": "1823:20:26"
+            },
+            {
+              "label": "startDate",
+              "astId": 4397,
+              "type": "t_uint256",
+              "src": "1864:17:26"
+            },
+            {
+              "label": "fullWattEquivBurnTime",
+              "astId": 4399,
+              "type": "t_uint256",
+              "src": "1954:29:26"
+            },
+            {
+              "label": "dailyEquivBurnTime",
+              "astId": 4401,
+              "type": "t_uint256",
+              "src": "1994:26:26"
+            },
+            {
+              "label": "dailyEquivBurnClock",
+              "astId": 4403,
+              "type": "t_uint256",
+              "src": "2031:27:26"
+            },
+            {
+              "label": "lastStateChangeTime",
+              "astId": 4405,
+              "type": "t_uint256",
+              "src": "2075:27:26"
+            },
+            {
+              "label": "burnHourTracker",
+              "astId": 4408,
+              "type": "t_array:dyn<t_uint256>",
+              "src": "2113:25:26"
+            },
+            {
+              "label": "lastOffsetTime",
+              "astId": 4410,
+              "type": "t_uint256",
+              "src": "2159:22:26"
+            }
+          ]
+        },
+        "t_array:dyn<t_uint256>": {
+          "id": "t_array:dyn<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "dyn",
+          "kind": "array",
+          "label": "uint256[]"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 1087,
+          "type": "t_bool",
+          "src": "757:24:7"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 1089,
+          "type": "t_bool",
+          "src": "876:25:7"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 1151,
+          "type": "t_array:50<t_uint256>",
+          "src": "1982:29:7"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "_owner",
+          "astId": 969,
+          "type": "t_address",
+          "src": "526:22:6"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "______gap",
+          "astId": 1082,
+          "type": "t_array:50<t_uint256>",
+          "src": "2471:29:6"
+        },
+        {
+          "contract": "GSNRecipient",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/GSN/GSNRecipient.sol",
+          "label": "_relayHub",
+          "astId": 67,
+          "type": "t_address",
+          "src": "1149:25:1"
+        },
+        {
+          "contract": "LEDState",
+          "path": "contracts/LEDState/LEDState.sol",
+          "label": "luminaire",
+          "astId": 5136,
+          "type": "t_struct<LEDLibrary.LEDStorage>",
+          "src": "2071:38:27"
+        },
+        {
+          "contract": "LEDState",
+          "path": "contracts/LEDState/LEDState.sol",
+          "label": "allowedGSNAddress",
+          "astId": 5138,
+          "type": "t_address",
+          "src": "2118:33:27"
+        },
+        {
+          "contract": "LEDState",
+          "path": "contracts/LEDState/LEDState.sol",
+          "label": "credentials",
+          "astId": 5140,
+          "type": "t_address",
+          "src": "2164:37:27"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    }
+  },
+  "solidityLibs": {},
+  "proxies": {
+    "creol-eth/LEDState": [
+      {
+        "address": "0xFC628dd79137395F3C9744e33b1c5DE554D94882",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x4bf3A7dFB3b76b5B3E169ACE65f888A4b4FCa5Ee",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0xf19A2A01B70519f67ADb309a994Ec8c69A967E8b",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x47a2Db5D68751EeAdFBC44851E84AcDB4F7299Cc",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0xe97DbD7116D168190F8A6E7beB1092c103c53a12",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x7231ECd1355a60251eE56Bf81f987969fc9bAe29",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x966d3e76E7a890A2d7B9AE1E370dC219E920F9D4",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0xfE82e8f24A51E670133f4268cDfc164c49FC3b37",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0xd611F1AF9D056f00F49CB036759De2753EfA82c2",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0xdC78afe9cFDe0576Ff236667DC8c380615c24Ca9",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x0d3C71782055bD88A71b611972152d6e984EDF79",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x04CbD650c829299FDedCE903eada37FbDbA3b50f",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x8be8DFCDC90F50562b5022DE1f8D83fe93b0b055",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0xd99748782d7643b00C36a4Bb296C4A099dF98Ff3",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0xDf3Cf8b9978c9c5639E06da3bfF5014ab5c055d1",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x8b9e409a817c7dC1a42C3DDe9E85dcBFF602c0fC",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0xe5608e4945998aB5E4548Bc95b421E188095DA8E",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x6AB47d47cF45C4aaA5c7F33c6632390674EfA294",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x8c634b72fF5d6A9F6a0281EEF36365E4db8bDF8d",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x70eE878D560D7E17a986872f54B7C58f564B2784",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x97bd553f21B175F7CC00819cC6494a7FbA344180",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0xc21dc5A1b919088F308e0b02243Aaf64c060Dbd0",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0xfC059aBD0407c6cBF2bD76C940FDa27B51f1187d",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0xFd8643CeE37DaE121Ca0E84FD2Ceeb49E828B493",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x0a8c20aadDDDF50AFD1d431342Aaf28E4e757884",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x3c3d89322de3aC6D5BCBD10801BbB2C68f5AC5f1",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x79e0ba0C34ED4cc6a493ebCdf11A84491Cb6f5ea",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x3e5399049a779489000583dD0d14576D0472Fe94",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0xfF6b4a7115Abf62b14125D43b8420034f99423fA",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x32e02F2934824ec085298E2B4e0e07935Ec6DaeC",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0xC4bC1f775dB36c07b0bC506cbB83fCe12E182053",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x970e1d481CEDbeaeFE776275F0d1b4E1B301bB3b",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0xfd30B6e495CC375Bd98d01BD959F741Dd2772d64",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0xf51B62641D4c472E6EC0DB7Ea50382aE66Ff092e",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x46Ec5F3b5d965072023E98f98A02ce46AEe473c6",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0xf454f24A62E5Be73aA877Aa824b78F8F2a31d236",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x18c07E395Df250003f439F6e8ea1Ea8Aa51752c6",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0xC8d87fdd2896E0a1cAb382322075FDAD7526c8D2",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0xC739aB616866B180017ee4a594364A761A921bA6",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x4ae38d5F94A9be67Cd0F50Dd4Ab26D4A627eEA22",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x041Ce3598527F8eD4b28AE42496f844ddF0f9a70",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x83aE7312372356d9cC1b61061218B51945596A1A",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x13331A9E619b4e016f35f29dF84c1b14675fE33D",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x048fA73e8DC04B04C084C2e78fA324a17Ac1D8F5",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x070a69230a08B93807c43a96327ff091aE7fC04D",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x5D4aA0caf417ad2BA832671DF9a6a976198D109a",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x05b02F6d3d0a602f12212E04dc9a13336e2e6D39",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x17Bbbb7A533E78a92096597451dd54887CcB2C58",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0x44cAA0c71800eEA0Ec750Ba1A9Ff420cbc393952",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0xC58F9C1af2ED42B4902Aa59964a761cfa35305C3",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      },
+      {
+        "address": "0xFb31e95D1C3B96cf8822b943A928AFfC7598F4Fb",
+        "kind": "NonProxy",
+        "bytecodeHash": "758bc0c1f0290f3d1a33f90f5d61a4e7e2b7126154fcf79ccd8899bc08262047"
+      }
+    ],
+    "creol-eth/LEDFactory": [
+      {
+        "address": "0x42D4BA5e542d9FeD87EA657f0295F1968A61c00A",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x9ce4cd6D7f5e8b14c7a3e8e6A257A86Bd5a6EeA0",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x6793E8E0E8ac22d71c65c2bf82e9B142dEf9eCDb",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0xE8e43b5D61C43375aB7b651F1419F2a81C5E6615",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x71e7EC880873af0FE33Ad988F862bE200FdD85cC",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0xEdCD6442143188Deb586e182B7900dFb8707Bc27",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x770191B327a9f6cd83B997F68c1ce3c8e6a018dc",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x9A6448b4bab66F952F2431E14562Bcfab7840cE3",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0xF6aFcd935c28365CCe278Fed78b26Fe2BC9ae518",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0xFd6e1d4eaDbc80322F62e7148AD223596A005238",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x49bC4443E05f7c05A823920CaD1c9EbaAcD7201E",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x29fa1c214B7242b704063F2Ec52494f4639A9cc3",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x6FdB1c9e1a1A8beD2EE22a3d5E62CA330ee88ecb",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x439D0306A0EBD39771781AFB74c1Ae8De29E97Fa",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0xA2bF3F0729D9A95599DB31660eb75836a4740c5F",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0xE39caEcB7ed0E02194727aA60cF5d8A0fc6b273c",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x5C3670E0Ac747b03CD0e3B3165b2fd69e6fB790A",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0xe67a1e001a30eF1e0EDE04637F1Aceb3F2080604",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x0937F524C8A7d3D6Af3023875CF6c7f293F3B994",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0xc080828C1A20E7cb0D20AD5191314e64286989E5",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0xa69F4c9F17e4C90138c55279aAF1917352D435C7",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x718e1497188318aDdf7e38b8318747006541F888",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x0dBF0f9288Cb1A22060F17A5B5bdcC260AB7d965",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x55Db01E043a48bc0d11037c51E3911A9Eb8dbe24",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x3Cc7B9a386410858B412B00B13264654F68364Ed",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0xFE9550608e2acF01694524b1F94d937DfDe806C2",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0xb55C7377F4F902aDC6088Ef5941F7c7EC7F926e5",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x4E42782ac3A619Bf6A515Ca33c4B926364A51e31",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0xF3Ecf410c2f4EF71691F63E409300f85c16c4f33",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x0DB24A927FFC3622884B7A3B6f1C694ED8092A01",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x5568CA4C8fc2ACd7D3f814A03a54A84Af9167CbC",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x1846df34672262F228bff4d7FD0187FAF735f68d",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x82b79c961EE10faAdAaFC0b9bD74d6EE8048032E",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x85c36479CD6DE396F4b237a7ce4743AAA9ac346B",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0xbbf69673e44988D2FD7D878eDbD1cDDa1A70fAB7",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x89c320c75520777AB36f4924cE57c65960370fE1",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x6E62eFEAb443bd1B233C4DF795Da4794511a8907",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x0Ca8A551544d39eb71BD0F70Af22e126C263409A",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x67d190D787AE46c50503Dd796bAd09E85d712C3E",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0xEdbb3C98DC9A226518c75E8F641cD0C3F8e3a364",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0xa7ed470Dd9f1e2B656708D87e64e9ddCc79583c0",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0xae9FddaFfCA85dFAd7E325F6Cea96B1216C60317",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0xC4ad46B3Fc9bB81D3AcD5B9f853315D6bB2C537E",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0xAf57A911e5BE42c608770d6203D1Fd38A103a82A",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x91658d67482022A0dd3F0472770f26E14e65B131",
+        "version": "0.0.2",
+        "implementation": "0x5f8e26fAcC23FA4cbd87b8d9Dbbd33D5047abDE1",
+        "admin": "0xC5aFE31AE505594B190AC71EA689B58139d1C354",
+        "kind": "Upgradeable"
+      }
+    ]
+  },
+  "manifestVersion": "2.2",
+  "dependencies": {
+    "@openzeppelin/contracts-ethereum-package": {
+      "package": "0xe78A0F7E598Cc8b0Bb87894B0F60dD2a88d6a8Ab",
+      "version": "2.5.0",
+      "customDeploy": true
+    }
+  },
+  "version": "0.0.2",
+  "app": {
+    "address": "0xD86C8F0327494034F60e25074420BcCF560D5610"
+  },
+  "package": {
+    "address": "0x4bf749ec68270027C5910220CEAB30Cc284c7BA2"
+  },
+  "provider": {
+    "address": "0xaD888d0Ade988EbEe74B8D4F39BF29a8d0fe8A8D"
+  },
+  "proxyAdmin": {
+    "address": "0xC5aFE31AE505594B190AC71EA689B58139d1C354"
+  }
+}

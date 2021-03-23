@@ -1,0 +1,38 @@
+{
+  "name": "creol-eth",
+  "version": "0.0.1",
+  "description": "All files to run permissioned version of Eth on Creol Prototype",
+  "main": "index.js",
+  "dependencies": {
+    "@openzeppelin/cli": "^2.8.2",
+    "@openzeppelin/contracts-ethereum-package": "^2.4.0",
+    "@openzeppelin/upgrades": "^2.7.1",
+    "babel-polyfill": "^6.26.0",
+    "babel-register": "^6.26.0",
+    "dotenv": "^6.2.0",
+    "ipaddr.js": "^1.8.1",
+    "provable-eth-api": "git+https://github.com/provable-things/ethereum-api.git",
+    "solidity-util": "github:willitscale/solidity-util",
+    "truffle-hdwallet-provider": "^1.0.4",
+    "web3": "^1.2.5"
+  },
+  "devDependencies": {
+    "@openzeppelin/test-environment": "^0.1.4",
+    "@openzeppelin/test-helpers": "^0.5.6",
+    "chai": "^4.2.0",
+    "mocha": "^8.0.1"
+  },
+  "scripts": {
+    "test": "mocha --exit --recursive test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JUDOKICK/creol-eth.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JUDOKICK/creol-eth/issues"
+  },
+  "homepage": "https://github.com/JUDOKICK/creol-eth#readme"
+}

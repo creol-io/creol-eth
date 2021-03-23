@@ -1,0 +1,2158 @@
+{
+  "fileName": "RoomStateInterface.sol",
+  "contractName": "RoomStateInterface",
+  "source": "\r\npragma solidity ^0.5.0;\r\n/**\r\n *\r\n *\r\n *\r\n *   @title RoomStateInterface v0.0.1\r\n ________  ________  _______   ________  ___\r\n|\\   ____\\|\\   __  \\|\\  ___ \\ |\\   __  \\|\\  \\\r\n\\ \\  \\___|\\ \\  \\|\\  \\ \\   __/|\\ \\  \\|\\  \\ \\  \\\r\n \\ \\  \\    \\ \\   _  _\\ \\  \\_|/_\\ \\  \\\\\\  \\ \\  \\\r\n  \\ \\  \\____\\ \\  \\\\  \\\\ \\  \\_|\\ \\ \\  \\\\\\  \\ \\  \\____\r\n   \\ \\_______\\ \\__\\\\ _\\\\ \\_______\\ \\_______\\ \\_______\\\r\n    \\|_______|\\|__|\\|__|\\|_______|\\|_______|\\|_______|\r\n\r\n\r\n\r\n *\r\n *\r\n\r\n\r\n  _____                        _____ _        _       _____       _             __\r\n |  __ \\                      / ____| |      | |     |_   _|     | |           / _|\r\n | |__) |___   ___  _ __ ___ | (___ | |_ __ _| |_ ___  | |  _ __ | |_ ___ _ __| |_ __ _  ___ ___\r\n |  _  // _ \\ / _ \\| '_ ` _ \\ \\___ \\| __/ _` | __/ _ \\ | | | '_ \\| __/ _ \\ '__|  _/ _` |/ __/ _ \\\r\n | | \\ \\ (_) | (_) | | | | | |____) | || (_| | ||  __/_| |_| | | | ||  __/ |  | || (_| | (_|  __/\r\n |_|  \\_\\___/ \\___/|_| |_| |_|_____/ \\__\\__,_|\\__\\___|_____|_| |_|\\__\\___|_|  |_| \\__,_|\\___\\___|\r\n\r\n\r\n\r\n\r\n* @author Joshua Bijak\r\n* Date:       February 18,2020\r\n* @notice RoomState Pulling Contract Interface\r\n* @dev RoomState interface to get room information\r\n\r\n*\r\n*\r\n*\r\n*\r\n*/\r\n\r\n\r\ninterface RoomStateInterface {\r\n    event newRoom ( address roomAddr);\r\n    event newCreezy( string creezyID, address[] newCreezyLEDs);\r\n    event newLED(address _newLED);\r\n    event delCreezy( string creezyID);\r\n    event newCreezyCoapAddr( string creezyID, string coapAddress);\r\n    event newCreezyNumLEDs ( string creezyID, uint256 numLEDs);\r\n    event newCreezyNumUniverses( string creezyID, uint256 numUniverses);\r\n    event newGroup(string groupID, uint256 groupIndex);\r\n    event groupDeleted( string groupID, uint256 groupIndex);\r\n    event newProxyAdmin(address _newProxyAdmin);\r\n    event payloadDataPacked(bytes _payLoadData);\r\n\r\n    function addCreezy(string calldata _coapAddr, string calldata _creezyID, uint256 _numLEDs,address contractOwner, uint256 _numUniverses, uint256 _ledWattage) external;\r\n    function removeCreezy(string calldata _creezyID) external;\r\n    function updateCreezyCoap(string calldata _creezyID, string calldata _coapAddr) external;\r\n    function addAndUpdateCreezyLEDs(string calldata _creezyID, uint256 _new_numLEDs, address contractOwner, uint256 _ledWattage) external ;\r\n    function addCreezyGroup(string calldata _groupString, address[] calldata LEDs) external ;\r\n    function removeGroup(string calldata _groupString) external ;\r\n    function getGroupAddresses(string calldata _groupID) external view returns(address[] memory);\r\n    function groupSwitchPlate (bool _newState, address[] calldata LEDAddresses) external ;\r\n    function groupDimPlate (uint256 _newDim, address[] calldata LEDAddresses) external ;\r\n    function getLEDCount() external view returns(uint LEDCount);\r\n    function getGroupCount() external view returns(uint groupCount);\r\n    function getCreezyCount() external view returns(uint creezyCount);\r\n\r\n}\r\n",
+  "sourcePath": "contracts/RoomState/RoomStateInterface.sol",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "creezyID",
+          "type": "string"
+        }
+      ],
+      "name": "delCreezy",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "groupID",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "groupIndex",
+          "type": "uint256"
+        }
+      ],
+      "name": "groupDeleted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "creezyID",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "address[]",
+          "name": "newCreezyLEDs",
+          "type": "address[]"
+        }
+      ],
+      "name": "newCreezy",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "creezyID",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "coapAddress",
+          "type": "string"
+        }
+      ],
+      "name": "newCreezyCoapAddr",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "creezyID",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "numLEDs",
+          "type": "uint256"
+        }
+      ],
+      "name": "newCreezyNumLEDs",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "creezyID",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "numUniverses",
+          "type": "uint256"
+        }
+      ],
+      "name": "newCreezyNumUniverses",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "groupID",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "groupIndex",
+          "type": "uint256"
+        }
+      ],
+      "name": "newGroup",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_newLED",
+          "type": "address"
+        }
+      ],
+      "name": "newLED",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_newProxyAdmin",
+          "type": "address"
+        }
+      ],
+      "name": "newProxyAdmin",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "roomAddr",
+          "type": "address"
+        }
+      ],
+      "name": "newRoom",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "_payLoadData",
+          "type": "bytes"
+        }
+      ],
+      "name": "payloadDataPacked",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_creezyID",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_new_numLEDs",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "contractOwner",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_ledWattage",
+          "type": "uint256"
+        }
+      ],
+      "name": "addAndUpdateCreezyLEDs",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_coapAddr",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_creezyID",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_numLEDs",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "contractOwner",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_numUniverses",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_ledWattage",
+          "type": "uint256"
+        }
+      ],
+      "name": "addCreezy",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_groupString",
+          "type": "string"
+        },
+        {
+          "internalType": "address[]",
+          "name": "LEDs",
+          "type": "address[]"
+        }
+      ],
+      "name": "addCreezyGroup",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getCreezyCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "creezyCount",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_groupID",
+          "type": "string"
+        }
+      ],
+      "name": "getGroupAddresses",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getGroupCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "groupCount",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getLEDCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "LEDCount",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_newDim",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address[]",
+          "name": "LEDAddresses",
+          "type": "address[]"
+        }
+      ],
+      "name": "groupDimPlate",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "_newState",
+          "type": "bool"
+        },
+        {
+          "internalType": "address[]",
+          "name": "LEDAddresses",
+          "type": "address[]"
+        }
+      ],
+      "name": "groupSwitchPlate",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_creezyID",
+          "type": "string"
+        }
+      ],
+      "name": "removeCreezy",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_groupString",
+          "type": "string"
+        }
+      ],
+      "name": "removeGroup",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_creezyID",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_coapAddr",
+          "type": "string"
+        }
+      ],
+      "name": "updateCreezyCoap",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "ast": {
+    "absolutePath": "contracts/RoomState/RoomStateInterface.sol",
+    "exportedSymbols": {
+      "RoomStateInterface": [
+        13966
+      ]
+    },
+    "id": 13967,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 13818,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "2:23:36"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "\n *\n\n *   @title RoomStateInterface v0.0.1\n________  ________  _______   ________  ___\n|\\   ____\\|\\   __  \\|\\  ___ \\ |\\   __  \\|\\  \\\n\\ \\  \\___|\\ \\  \\|\\  \\ \\   __/|\\ \\  \\|\\  \\ \\  \\\n\\ \\  \\    \\ \\   _  _\\ \\  \\_|/_\\ \\  \\\\\\  \\ \\  \\\n\\ \\  \\____\\ \\  \\\\  \\\\ \\  \\_|\\ \\ \\  \\\\\\  \\ \\  \\____\n\\ \\_______\\ \\__\\\\ _\\\\ \\_______\\ \\_______\\ \\_______\\\n\\|_______|\\|__|\\|__|\\|_______|\\|_______|\\|_______|\n\n *\n_____                        _____ _        _       _____       _             __\n|  __ \\                      / ____| |      | |     |_   _|     | |           / _|\n| |__) |___   ___  _ __ ___ | (___ | |_ __ _| |_ ___  | |  _ __ | |_ ___ _ __| |_ __ _  ___ ___\n|  _  // _ \\ / _ \\| '_ ` _ \\ \\___ \\| __/ _` | __/ _ \\ | | | '_ \\| __/ _ \\ '__|  _/ _` |/ __/ _ \\\n| | \\ \\ (_) | (_) | | | | | |____) | || (_| | ||  __/_| |_| | | | ||  __/ |  | || (_| | (_|  __/\n|_|  \\_\\___/ \\___/|_| |_| |_|_____/ \\__\\__,_|\\__\\___|_____|_| |_|\\__\\___|_|  |_| \\__,_|\\___\\___|\n@author Joshua Bijak\nDate:       February 18,2020\n@notice RoomState Pulling Contract Interface\n@dev RoomState interface to get room information\n\n*\n\n*",
+        "fullyImplemented": false,
+        "id": 13966,
+        "linearizedBaseContracts": [
+          13966
+        ],
+        "name": "RoomStateInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 13822,
+            "name": "newRoom",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 13821,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13820,
+                  "indexed": false,
+                  "name": "roomAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13822,
+                  "src": "1259:16:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13819,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1259:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1257:19:36"
+            },
+            "src": "1243:34:36"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 13829,
+            "name": "newCreezy",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 13828,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13824,
+                  "indexed": false,
+                  "name": "creezyID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13829,
+                  "src": "1300:15:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 13823,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1300:6:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13827,
+                  "indexed": false,
+                  "name": "newCreezyLEDs",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13829,
+                  "src": "1317:23:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 13825,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1317:7:36",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 13826,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1317:9:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1298:43:36"
+            },
+            "src": "1283:59:36"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 13833,
+            "name": "newLED",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 13832,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13831,
+                  "indexed": false,
+                  "name": "_newLED",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13833,
+                  "src": "1361:15:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13830,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1361:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1360:17:36"
+            },
+            "src": "1348:30:36"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 13837,
+            "name": "delCreezy",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 13836,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13835,
+                  "indexed": false,
+                  "name": "creezyID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13837,
+                  "src": "1401:15:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 13834,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1401:6:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1399:18:36"
+            },
+            "src": "1384:34:36"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 13843,
+            "name": "newCreezyCoapAddr",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 13842,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13839,
+                  "indexed": false,
+                  "name": "creezyID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13843,
+                  "src": "1449:15:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 13838,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1449:6:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13841,
+                  "indexed": false,
+                  "name": "coapAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13843,
+                  "src": "1466:18:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 13840,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1466:6:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1447:38:36"
+            },
+            "src": "1424:62:36"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 13849,
+            "name": "newCreezyNumLEDs",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 13848,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13845,
+                  "indexed": false,
+                  "name": "creezyID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13849,
+                  "src": "1517:15:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 13844,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1517:6:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13847,
+                  "indexed": false,
+                  "name": "numLEDs",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13849,
+                  "src": "1534:15:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 13846,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1534:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1515:35:36"
+            },
+            "src": "1492:59:36"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 13855,
+            "name": "newCreezyNumUniverses",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 13854,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13851,
+                  "indexed": false,
+                  "name": "creezyID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13855,
+                  "src": "1586:15:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 13850,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1586:6:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13853,
+                  "indexed": false,
+                  "name": "numUniverses",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13855,
+                  "src": "1603:20:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 13852,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1603:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1584:40:36"
+            },
+            "src": "1557:68:36"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 13861,
+            "name": "newGroup",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 13860,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13857,
+                  "indexed": false,
+                  "name": "groupID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13861,
+                  "src": "1646:14:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 13856,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1646:6:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13859,
+                  "indexed": false,
+                  "name": "groupIndex",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13861,
+                  "src": "1662:18:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 13858,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1662:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1645:36:36"
+            },
+            "src": "1631:51:36"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 13867,
+            "name": "groupDeleted",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 13866,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13863,
+                  "indexed": false,
+                  "name": "groupID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13867,
+                  "src": "1708:14:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 13862,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1708:6:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13865,
+                  "indexed": false,
+                  "name": "groupIndex",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13867,
+                  "src": "1724:18:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 13864,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1724:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1706:37:36"
+            },
+            "src": "1688:56:36"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 13871,
+            "name": "newProxyAdmin",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 13870,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13869,
+                  "indexed": false,
+                  "name": "_newProxyAdmin",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13871,
+                  "src": "1770:22:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13868,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1770:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1769:24:36"
+            },
+            "src": "1750:44:36"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 13875,
+            "name": "payloadDataPacked",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 13874,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13873,
+                  "indexed": false,
+                  "name": "_payLoadData",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13875,
+                  "src": "1824:18:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 13872,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1824:5:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1823:20:36"
+            },
+            "src": "1800:44:36"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 13890,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addCreezy",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13888,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13877,
+                  "name": "_coapAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13890,
+                  "src": "1871:25:36",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 13876,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1871:6:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13879,
+                  "name": "_creezyID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13890,
+                  "src": "1898:25:36",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 13878,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1898:6:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13881,
+                  "name": "_numLEDs",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13890,
+                  "src": "1925:16:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 13880,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1925:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13883,
+                  "name": "contractOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13890,
+                  "src": "1942:21:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13882,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1942:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13885,
+                  "name": "_numUniverses",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13890,
+                  "src": "1965:21:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 13884,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1965:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13887,
+                  "name": "_ledWattage",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13890,
+                  "src": "1988:19:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 13886,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1988:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1870:138:36"
+            },
+            "returnParameters": {
+              "id": 13889,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2017:0:36"
+            },
+            "scope": 13966,
+            "src": "1852:166:36",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 13895,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "removeCreezy",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13893,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13892,
+                  "name": "_creezyID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13895,
+                  "src": "2046:25:36",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 13891,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2046:6:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2045:27:36"
+            },
+            "returnParameters": {
+              "id": 13894,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2081:0:36"
+            },
+            "scope": 13966,
+            "src": "2024:58:36",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 13902,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateCreezyCoap",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13900,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13897,
+                  "name": "_creezyID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13902,
+                  "src": "2114:25:36",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 13896,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2114:6:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13899,
+                  "name": "_coapAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13902,
+                  "src": "2141:25:36",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 13898,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2141:6:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2113:54:36"
+            },
+            "returnParameters": {
+              "id": 13901,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2176:0:36"
+            },
+            "scope": 13966,
+            "src": "2088:89:36",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 13913,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addAndUpdateCreezyLEDs",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13911,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13904,
+                  "name": "_creezyID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13913,
+                  "src": "2215:25:36",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 13903,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2215:6:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13906,
+                  "name": "_new_numLEDs",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13913,
+                  "src": "2242:20:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 13905,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2242:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13908,
+                  "name": "contractOwner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13913,
+                  "src": "2264:21:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13907,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2264:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13910,
+                  "name": "_ledWattage",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13913,
+                  "src": "2287:19:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 13909,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2287:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2214:93:36"
+            },
+            "returnParameters": {
+              "id": 13912,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2317:0:36"
+            },
+            "scope": 13966,
+            "src": "2183:135:36",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 13921,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addCreezyGroup",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13919,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13915,
+                  "name": "_groupString",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13921,
+                  "src": "2348:28:36",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 13914,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2348:6:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13918,
+                  "name": "LEDs",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13921,
+                  "src": "2378:23:36",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 13916,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2378:7:36",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 13917,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2378:9:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2347:55:36"
+            },
+            "returnParameters": {
+              "id": 13920,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2412:0:36"
+            },
+            "scope": 13966,
+            "src": "2324:89:36",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 13926,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "removeGroup",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13924,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13923,
+                  "name": "_groupString",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13926,
+                  "src": "2440:28:36",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 13922,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2440:6:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2439:30:36"
+            },
+            "returnParameters": {
+              "id": 13925,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2479:0:36"
+            },
+            "scope": 13966,
+            "src": "2419:61:36",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 13934,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getGroupAddresses",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13929,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13928,
+                  "name": "_groupID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13934,
+                  "src": "2513:24:36",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 13927,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2513:6:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2512:26:36"
+            },
+            "returnParameters": {
+              "id": 13933,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13932,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13934,
+                  "src": "2561:16:36",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 13930,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2561:7:36",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 13931,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2561:9:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2560:18:36"
+            },
+            "scope": 13966,
+            "src": "2486:93:36",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 13942,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "groupSwitchPlate",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13940,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13936,
+                  "name": "_newState",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13942,
+                  "src": "2612:14:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 13935,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2612:4:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13939,
+                  "name": "LEDAddresses",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13942,
+                  "src": "2628:31:36",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 13937,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2628:7:36",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 13938,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2628:9:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2611:49:36"
+            },
+            "returnParameters": {
+              "id": 13941,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2670:0:36"
+            },
+            "scope": 13966,
+            "src": "2585:86:36",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 13950,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "groupDimPlate",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13948,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13944,
+                  "name": "_newDim",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13950,
+                  "src": "2701:15:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 13943,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2701:7:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13947,
+                  "name": "LEDAddresses",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13950,
+                  "src": "2718:31:36",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_calldata_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 13945,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2718:7:36",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 13946,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2718:9:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2700:50:36"
+            },
+            "returnParameters": {
+              "id": 13949,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2760:0:36"
+            },
+            "scope": 13966,
+            "src": "2677:84:36",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 13955,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getLEDCount",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13951,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2787:2:36"
+            },
+            "returnParameters": {
+              "id": 13954,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13953,
+                  "name": "LEDCount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13955,
+                  "src": "2812:13:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 13952,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2812:4:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2811:15:36"
+            },
+            "scope": 13966,
+            "src": "2767:60:36",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 13960,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getGroupCount",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13956,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2855:2:36"
+            },
+            "returnParameters": {
+              "id": 13959,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13958,
+                  "name": "groupCount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13960,
+                  "src": "2880:15:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 13957,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2880:4:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2879:17:36"
+            },
+            "scope": 13966,
+            "src": "2833:64:36",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 13965,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getCreezyCount",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13961,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2926:2:36"
+            },
+            "returnParameters": {
+              "id": 13964,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13963,
+                  "name": "creezyCount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13965,
+                  "src": "2951:16:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 13962,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2951:4:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2950:18:36"
+            },
+            "scope": 13966,
+            "src": "2903:66:36",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 13967,
+        "src": "1207:1767:36"
+      }
+    ],
+    "src": "2:2974:36"
+  },
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang",
+    "optimizer": {
+      "enabled": true,
+      "runs": 1000
+    },
+    "evmVersion": "petersburg"
+  }
+}
